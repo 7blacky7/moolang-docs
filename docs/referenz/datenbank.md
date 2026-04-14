@@ -39,6 +39,45 @@ für zeile in ergebnis:
     zeige zeile
 ```
 
+## `db_abfrage_mit_params` / `db_query_with_params`
+
+**Signatur**: `db_abfrage_mit_params(db, sql, params_liste) → liste<dict>`
+**Zweck**: Wie `db_abfrage`, aber SQL darf `?`-Platzhalter enthalten; die
+`params_liste` wird positional gebunden (1-based). Das ist der **empfohlene
+Weg**, um Nutzer-Eingaben in Queries einzubauen — Parameter-Binding verhindert
+SQL-Injection auf C-Ebene (sqlite3_bind_*), ohne dass Strings manuell escaped
+werden muessen.
+
+Typ-Mapping: Ganzzahlen → `INTEGER`, Kommazahlen → `REAL`, Strings → `TEXT`,
+`nichts` → `NULL`, Boolean → `INTEGER` (0/1), alles andere wird als JSON-Text
+gebunden.
+
+**Beispiel** (verifiziert, `/tmp/moo-verify/db_prep_1_basic.moo`):
+```moo
+setze r auf db_abfrage_mit_params(db, "SELECT id, name, age FROM u WHERE age > ?", [26])
+zeige r
+```
+
+## `db_ausführen_mit_params` / `db_execute_with_params`
+
+**Signatur**: `db_ausführen_mit_params(db, sql, params_liste) → zahl`
+**Zweck**: Wie `db_ausführen`, aber mit `?`-Platzhaltern und Parameter-Binding.
+Gibt die Anzahl betroffener Zeilen zurueck.
+
+**Beispiel**:
+```moo
+setze n auf db_ausführen_mit_params(db,
+    "INSERT INTO u (name, age) VALUES (?, ?)", ["Anna", 25])
+zeige n
+```
+
+Injection-Sicher: selbst wenn der gebundene Wert wie SQL aussieht (`"'; DROP TABLE u; --"`),
+wird er als Datentext in die Spalte geschrieben, nicht als SQL ausgefuehrt.
+
+> **Hinweis**: `sql_bereinigen` (aus [Kryptografie](krypto.md)) bleibt funktional, ist
+> aber ab sofort **deprecated** fuer neuen Code — Prepared-Statements via
+> `db_*_mit_params` sind der sichere Weg.
+
 ## `db_schliessen` / `db_close` / `dbs`
 
 **Signatur**: `db_schliessen(db) → nichts`
