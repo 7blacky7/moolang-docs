@@ -81,7 +81,34 @@ nav:
   - Tutorial: tutorial.md
   - Sprache:
       - sprache/grundlagen.md
-  - Runtime-APIs:
+  - Sprache & Stdlib:
+      - Kern-Builtins: referenz/kern.md
+      - Mathematik: referenz/mathematik.md
+      - Text (Strings): referenz/strings.md
+      - Listen: referenz/listen.md
+      - Dicts: referenz/dicts.md
+      - Fehlerbehandlung: referenz/fehler.md
+      - Result-Typ: referenz/result.md
+      - Events & Freeze: referenz/events.md
+      - Stdlib-Module: referenz/stdlib.md
+      - JSON: referenz/json.md
+      - HTTP: referenz/http.md
+      - Dateien & Verzeichnisse: referenz/dateien.md
+      - Datenbank: referenz/datenbank.md
+      - Kryptografie: referenz/krypto.md
+      - Regex: referenz/regex.md
+      - Threads: referenz/threads.md
+      - Channels: referenz/channels.md
+      - Netzwerk (TCP/UDP): referenz/netzwerk.md
+      - Webserver: referenz/webserver.md
+      - Profiler: referenz/profiler.md
+      - Test-API: referenz/test-api.md
+  - 3D & Game-Dev Modul:
+      - 2D-Grafik: referenz/grafik-2d.md
+      - Sprites: referenz/sprites.md
+      - 3D-Grafik: referenz/grafik-3d.md
+      - Welt-Engine: referenz/welt.md
+  - Runtime-APIs (Kurzuebersicht):
       - 2D-Grafik & Sprites: runtime/grafik.md
       - 3D-Grafik: runtime/3d.md
       - JSON: runtime/json.md
