@@ -78,6 +78,65 @@ wird er als Datentext in die Spalte geschrieben, nicht als SQL ausgefuehrt.
 > aber ab sofort **deprecated** fuer neuen Code — Prepared-Statements via
 > `db_*_mit_params` sind der sichere Weg.
 
+## `db_vorbereite` / `db_prepare` (Statement-Objekt)
+
+**Signatur**: `db_vorbereite(db, sql) → stmt`
+**Zweck**: Parst eine SQL-Anweisung einmal und liefert ein **Statement-Objekt**.
+Das gleiche Statement kann mehrfach gebunden und ausgefuehrt werden —
+ideal fuer Bulk-Inserts, wiederholte Queries oder Named-Params (`:name`,
+`@name`, `$name`).
+
+### Methoden auf `stmt`
+
+| Methode | Zweck |
+|---------|-------|
+| `stmt.binde(key, wert)` / `.bind(key, wert)` | Bindet einen Parameter. `key` ist entweder die 1-based Position (Zahl) oder ein Name (`":name"`, `"@name"`, `"$name"`, oder bloss `"name"`, wir stellen `":"` voran). |
+| `stmt.ausfuehren()` / `.execute()` | Fuehrt das Statement aus (INSERT/UPDATE/DELETE), resetet intern, liefert die Anzahl Zeilen. |
+| `stmt.abfrage()` / `.query()` | Sammelt alle Zeilen in eine Liste (SELECT), resetet danach. |
+| `stmt.schritt()` / `.step()` | Liefert die naechste Zeile als Dict oder `nichts` am Ende (lazy Iteration). |
+| `stmt.zuruecksetzen()` / `.reset()` | Statement fuer neue Bindung vorbereiten. |
+| `stmt.schliessen()` / `.close()` | Gibt die Statement-Ressource frei. |
+
+### Beispiel — Named-Params
+
+```moo
+setze stmt auf db_vorbereite(db, "INSERT INTO u (name, age) VALUES (:name, :age)")
+stmt.binde(":name", "Anna")
+stmt.binde(":age", 25)
+stmt.ausfuehren()
+stmt.binde("name", "Bob")
+stmt.binde("age", 30)
+stmt.ausfuehren()
+stmt.schliessen()
+```
+
+### Beispiel — Bulk-Insert 1000 Zeilen in einer Transaktion
+
+```moo
+db_ausführen(db, "BEGIN")
+setze s auf db_vorbereite(db, "INSERT INTO bulk (id, v) VALUES (?, ?)")
+setze i auf 0
+solange i < 1000:
+    s.binde(1, i)
+    s.binde(2, "row_" + text(i))
+    s.ausfuehren()
+    i += 1
+db_ausführen(db, "COMMIT")
+s.schliessen()
+```
+
+### Beispiel — Transaktion mit Rollback
+
+```moo
+db_ausführen(db, "BEGIN")
+setze s auf db_vorbereite(db, "INSERT INTO k (name) VALUES (:name)")
+s.binde(":name", "wird_verworfen")
+s.ausfuehren()
+s.schliessen()
+db_ausführen(db, "ROLLBACK")
+# Die Zeile existiert nach dem ROLLBACK nicht mehr.
+```
+
 ## `db_schliessen` / `db_close` / `dbs`
 
 **Signatur**: `db_schliessen(db) → nichts`
