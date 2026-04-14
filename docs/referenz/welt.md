@@ -70,13 +70,11 @@ importiere welt
 
 **Signatur**: `welt_tageszeit(w, zeit)` (0.0–1.0)
 
-### `__welt_baeume` / `__world_trees`
+### `welt_baeume` / `world_trees`
 
-**Signatur**: `__welt_baeume(w, biom_name, chance)`
-**Zweck**: Baum-Dichte pro Biom setzen (`chance` 0.0–1.0). Hinweis: Derzeit
-**kein** `welt_baeume`-Wrapper in `stdlib/welt.moo` — nur direkter Aufruf der
-internen Builtin-Funktion (Prefix `__`) möglich, bis `stdlib/welt.moo` erweitert
-wird.
+**Signatur**: `welt_baeume(w, biom_name, chance)`
+**Zweck**: Baum-Dichte pro Biom setzen (`chance` 0.0–1.0). Wrapper um die
+Runtime-Builtin `__welt_baeume` / `__world_trees`.
 
 ## Abfragen
 
