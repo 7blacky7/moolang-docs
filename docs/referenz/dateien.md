@@ -1,5 +1,9 @@
 # Datei-I/O
 
+## Was ist das?
+
+Datei-I/O (Input/Output, File System Access) bedeutet: Daten dauerhaft auf der Festplatte ablegen oder von dort lesen. moo bietet sowohl Text-Operationen (UTF-8 Strings) als auch binaere Operationen (Byte-Listen / Buffer / ByteArray) und einen einfachen Verzeichnis-Listing-Aufruf. Pfade koennen relativ zum Arbeitsverzeichnis oder absolut sein.
+
 Builtins fuer Datei- und Verzeichnis-Operationen. Alle Pfade sind relativ zum Arbeitsverzeichnis oder absolut.
 
 ## `datei_lesen` / `file_read` / `dl`

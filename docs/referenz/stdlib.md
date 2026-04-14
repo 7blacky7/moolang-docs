@@ -1,6 +1,10 @@
 # Stdlib-Module
 
-Zusätzlich zu den eingebauten Laufzeit-Funktionen liefert moolang mehrere Stdlib-Module als `.moo`-Dateien unter `stdlib/`. Import per `importiere <modul>`.
+## Was ist das?
+
+Die **Stdlib** (*Standard Library*, Standardbibliothek) ist eine Sammlung von häufig gebrauchten Hilfsfunktionen, die **nicht** zur Kern-Laufzeit gehören, sondern in moolang selbst geschrieben sind und mit `importiere <modul>` verfügbar werden — analog zu Pythons `math`/`statistics`, Rusts `std::collections` oder JavaScripts `Array.prototype`-Extras.
+
+Vorteil: Die Module sind lesbarer Beispielcode und können bei Bedarf studiert oder ersetzt werden. Quelle: `stdlib/*.moo`.
 
 ## `importiere mathe`
 

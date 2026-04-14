@@ -1,6 +1,19 @@
 # Netzwerk (TCP / UDP)
 
-Low-Level-Sockets mit String- und Bytes-I/O, blockierend mit optionalem Timeout.
+## Was ist das?
+
+Sockets sind der Low-Level-Kanal, über den zwei Programme übers Netzwerk Bytes
+austauschen — darunter sitzt kein HTTP, kein Framing, nichts. Es gibt zwei
+Geschmacksrichtungen: **TCP** (Stream, zuverlässig, reihenfolgetreu — wie eine
+Telefonverbindung; das Modell hinter HTTP, SSH, Datenbank-Protokollen) und
+**UDP** (Datagramme, unzuverlässig, verbindungslos — wie eine Postkarte; das
+Modell hinter DNS, Spielen, Voice). Der Umgang entspricht der Berkeley-Sockets-
+API aus Python `socket`, C oder Go `net`: binde einen Server-Port oder
+verbinde dich, lies und schreibe Strings oder rohe Bytes. In moo sind alle
+Operationen blockierend, mit optionalem Timeout und einer einheitlichen
+Bytes-Liste für binäre Daten.
+
+---
 
 ## TCP
 

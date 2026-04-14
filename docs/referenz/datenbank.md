@@ -1,5 +1,9 @@
 # Datenbank
 
+## Was ist das?
+
+Eine Datenbank (Database, DB, RDBMS) speichert strukturierte Daten in Tabellen mit Spalten und Zeilen und erlaubt Abfragen ueber SQL (Structured Query Language). moo benutzt darunter SQLite — eine eingebettete, serverlose Datenbank, die einfach eine Datei auf der Platte ist. Damit lassen sich kleine Anwendungen, Tools und Prototypen ohne separaten DB-Server bauen.
+
 SQLite-basierte DB-Builtins. Die Verbindungszeichenkette startet ueblicherweise mit `sqlite:///`.
 
 ## `db_verbinde` / `db_connect` / `dbv`

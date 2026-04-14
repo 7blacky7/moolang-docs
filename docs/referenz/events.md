@@ -1,5 +1,11 @@
 # Events & Freeze
 
+## Was ist das?
+
+**Events** (Ereignisse) sind ein Mechanismus, mit dem Objekte **Nachrichten** veröffentlichen, auf die andere Teile des Programms reagieren können — ohne dass das sendende Objekt wissen muss, wer zuhört. In anderen Sprachen bekannt als *Observer Pattern*, *Pub/Sub*, *EventEmitter* (Node.js) oder *Signals* (Qt, Godot).
+
+**Freeze** bedeutet, eine Liste oder ein Dict **unveränderlich** zu machen. Weitere Schreibzugriffe lösen einen Fehler aus. Ähnlich zu `Object.freeze` in JavaScript oder `frozen` Dataclasses in Python. Nützlich für Konfigurationen oder geteilten State.
+
 ## Events
 
 moolang-Objekte können Events publizieren und abonnieren (Beobachter-Muster).

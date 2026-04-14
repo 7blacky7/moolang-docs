@@ -1,6 +1,12 @@
 # Kern-Builtins
 
-Grundlegende eingebaute Funktionen der moolang-Laufzeit. Alle Namen haben je nach Funktion einen Deutsch- und Englisch-Alias (teils auch eine Kurzform). Quelle: `compiler/src/runtime_bindings.rs`, `compiler/src/codegen.rs`.
+## Was ist das?
+
+**Builtins** (eingebaute Funktionen) sind die grundlegenden Werkzeuge, die moolang ohne Import zur Verfügung stellt — vergleichbar mit Pythons `print`, `len`, `input` oder JavaScripts `console.log`. Sie liegen in der Laufzeit (Runtime) selbst und decken Ausgabe, Eingabe, Typ-Prüfung, Zeit, Zahlen-Konvertierung und Prozess-Steuerung ab.
+
+Fast jede Funktion hat einen deutschen und einen englischen Namen (z.B. `länge` / `len`), manchmal auch eine Kurzform. Beide sind gleichwertig — wähle, was lesbarer ist.
+
+Quelle: `compiler/src/runtime_bindings.rs`, `compiler/src/codegen.rs`.
 
 ## Ausgabe & Eingabe
 

@@ -1,6 +1,10 @@
 # Result-Typ
 
-Ein Rust-inspirierter Erfolg/Fehler-Container. Empfohlen statt Exceptions, wenn Fehler Teil des normalen Kontrollflusses sind.
+## Was ist das?
+
+Ein **Result** ist ein Wert, der entweder **Erfolg** (`ok`) oder **Fehler** (`fehler`) enthält — ein aus Rust bekanntes Muster (dort `Result<T, E>`), das auch in Haskell (`Either`), Swift (`Result`), TypeScript (per Library) und Kotlin zu finden ist.
+
+Statt einen Fehler als Exception zu werfen (die unsichtbar durch den Aufrufbaum reist), gibt eine Funktion einen Result zurück. Der Aufrufer muss explizit prüfen, ob das Ergebnis ok ist, bevor er den Inhalt verwendet. Das macht den Fehlerpfad sichtbar im Typ und Kontrollfluss — sinnvoll für **erwartbare** Fehler (Parsen, Netzwerk, I/O). Für unerwartete Programmfehler (Bugs, Assertions) siehe **Fehlerbehandlung** mit `wirf`/`versuche`.
 
 ## Konstruktoren
 

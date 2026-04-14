@@ -1,6 +1,17 @@
 # Webserver
 
-Eingebauter HTTP-Server mit Request/Response-, JSON-, Datei- und Template-Support.
+## Was ist das?
+
+Ein Webserver spricht das HTTP-Protokoll — das ist die Sprache, in der Browser
+mit Servern reden (Request/Response, wie bei Express in Node.js, Flask in
+Python oder dem eingebauten `http`-Paket in Go). moo bringt einen minimalen,
+eingebauten HTTP-Server: du bindest einen Port, nimmst eingehende Anfragen an,
+schaust auf Pfad und Methode und schickst eine Antwort zurück — HTML, JSON,
+eine statische Datei oder ein kleines Template mit `{{platzhaltern}}`. Keine
+externen Libraries nötig; der Server ist synchron-blockierend und gut genug
+für APIs, kleine Apps, Tools und Lerneinheiten.
+
+---
 
 ## Server
 

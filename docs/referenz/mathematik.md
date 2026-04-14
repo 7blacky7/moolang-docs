@@ -1,6 +1,10 @@
 # Mathematik
 
-Numerische Stdlib-Funktionen der moolang-Laufzeit.
+## Was ist das?
+
+Numerische Hilfsfunktionen für Rechenoperationen, die über die Grundrechenarten `+ - * / %` hinausgehen: Absolutwert, Wurzel, Rundung, Minimum/Maximum, trigonometrische Funktionen (Sinus, Kosinus, ...) und Zufallszahlen. In anderen Sprachen findet sich dasselbe typischerweise in `math`-Modulen (Python `math`, C `math.h`, JS `Math`).
+
+Alle Funktionen arbeiten mit dem Typ `Zahl` (entspricht einem IEEE-754 64-Bit Double).
 
 ## Grundlagen
 

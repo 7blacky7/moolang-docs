@@ -1,8 +1,20 @@
 # Welt-Engine
 
-High-Level-Modul für prozedurale 3D-Welten (Terrain, Biome, Bäume, Nebel, Sonne,
-Tageszeit) mit eingebauter FPS-Kamera. Wrapper-Modul — `importiere welt` lädt
-`stdlib/welt.moo`, das die `__welt_*`-Runtime-Bindings verkapselt.
+## Was ist das?
+
+Die Welt-Engine (Voxel/Terrain World Engine) ist eine fertige Mini-Minecraft-
+bzw. Open-World-Runtime: mit wenigen Zeilen bekommst du eine prozedural
+generierte 3D-Welt mit Terrain, Biomen, Bäumen, Nebel, beweglicher Sonne und
+Tageszeit sowie einer First-Person-Kamera. Die Generierung basiert auf
+Perlin-Noise und ist durch einen Seed deterministisch — gleicher Seed liefert
+dieselbe Welt. Anders als das rohe 3D-Modul musst du hier keine Dreiecke selbst
+platzieren; das Modul kümmert sich um Chunks, Rendering, Kollisions-ähnliche
+Höhenabfragen und Steuerung. Ideal für Prototypen, Spiele-Experimente oder
+einfach zum Reinlaufen.
+
+---
+
+`importiere welt` lädt `stdlib/welt.moo`, das die `__welt_*`-Runtime-Bindings verkapselt.
 
 ## Nutzung
 

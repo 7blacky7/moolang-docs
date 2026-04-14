@@ -1,7 +1,17 @@
 # Test-API
 
-Deterministische Tests für moo-Programme mit Fenster: Screenshots + simulierte
-Eingaben. Nützlich für headless Regression-Tests von Spielen.
+## Was ist das?
+
+Die Test-API macht GUI-Programme deterministisch testbar — das übliche Problem,
+dass Spiele und grafische Tools normalerweise manuelles Klicken brauchen. Das
+Konzept entspricht Snapshot-Testing (wie Jest/Vitest für React-Komponenten) in
+Kombination mit Input-Simulation (wie `xdotool`, Selenium oder Playwright): dein
+Programm rendert einen Frame in einen Offscreen-Framebuffer, du speicherst das
+Bild auf Platte (Screenshot/BMP), injizierst Tastatur- und Maus-Events direkt
+in die Event-Queue und vergleichst in späteren Läufen das neue Bild mit dem
+alten. So werden Pong, Breakout & Co. headless und reproduzierbar validierbar.
+
+---
 
 ## `screenshot` / `bildschirmfoto`
 

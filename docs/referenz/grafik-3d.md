@@ -1,7 +1,18 @@
 # Grafik 3D
 
-3D-Fenster, Kamera, Transform-Stack, Primitive, FPS-Input, Chunk-Display-Lists.
-Runtime: OpenGL 3.3.
+## Was ist das?
+
+3D-Grafik beschreibt eine Szene in echten Welt-Koordinaten (X, Y, Z) und
+projiziert sie mit einer Kamera auf dein Fenster — so wie Minecraft, Quake oder
+jeder Level-Editor arbeiten. moo bringt einen simplen **Immediate-Mode-Renderer**
+(OpenGL 3.3): du öffnest ein 3D-Fenster, setzt eine Perspektive und eine
+Kamera, stapelst Transformationen (Translate, Rotate) über einen Matrix-Stack
+(wie OpenGL 1.x oder Processing), und zeichnest Primitive (Würfel, Kugel,
+Dreieck). Für Performance kannst du Geometrie einmal als **Chunk** (Display
+List / Batched Mesh) backen und billig wieder verwenden. Mouse-Capture plus
+Delta-Mausbewegung reicht für First-Person-Kamera.
+
+---
 
 ## Fenster & Kamera
 

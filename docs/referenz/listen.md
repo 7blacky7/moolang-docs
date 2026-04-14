@@ -1,5 +1,11 @@
 # Listen-Methoden
 
+## Was ist das?
+
+Eine **Liste** (in anderen Sprachen: *Array*, *Vector*, *List*) speichert mehrere Werte in einer geordneten Reihenfolge. Zugriff erfolgt über einen Index: `liste[0]` ist das erste Element. Listen wachsen dynamisch — über `.hinzufügen(wert)` werden Elemente angehängt.
+
+Schreibweise: `[1, 2, 3]`. Elemente dürfen gemischte Typen sein (`[1, "abc", wahr]`). Index beginnt bei `0`.
+
 Methoden werden über die Punkt-Notation auf einer Liste aufgerufen.
 
 ## Hinzufügen & Entfernen

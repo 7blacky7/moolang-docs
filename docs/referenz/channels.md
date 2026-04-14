@@ -1,5 +1,9 @@
 # Channels
 
+## Was ist das?
+
+Ein Channel (Queue, Pipe, Mailbox, Message Queue) ist eine sichere Verbindung zwischen Threads: ein Sender legt Werte hinein, ein Empfaenger holt sie heraus — first in, first out. Channels haben einen Puffer fester Groesse; ist er voll, blockiert das Senden, ist er leer, blockiert das Empfangen. Damit laesst sich ohne explizite Locks koordinieren, wer wann welche Daten verarbeitet.
+
 Gepufferte Channels zur sicheren Kommunikation zwischen Threads.
 
 > **Hinweis**: Die Empfangs-Methode heisst in moo `empfangen` (DE) bzw. `recv` (EN). In aelteren Beispielen taucht `receive` auf — aktuell akzeptiert der Codegenerator nur `empfangen` / `recv`.

@@ -1,6 +1,12 @@
 # Dict-Methoden
 
-Dictionaries (Schlüssel-Wert-Maps) haben Punkt-Methoden für Zugriffsprüfung und Schlüssellisten. Lesen/Schreiben der Werte erfolgt über den Index-Operator `[schlüssel]`.
+## Was ist das?
+
+Ein **Dict** (Kurzform von *Dictionary*; in anderen Sprachen: *Map*, *HashMap*, *Assoziatives Array*, *Object* in JSON) speichert **Schlüssel-Wert-Paare**. Statt über einen numerischen Index wird über einen Schlüssel zugegriffen: `person["name"]`.
+
+Schreibweise: `{"name": "Ada", "alter": 36}`. Schlüssel sind üblicherweise Texte. Werte dürfen beliebige Typen sein. Die Reihenfolge ist nicht garantiert.
+
+Methoden (`.hat`, `.schlüssel`, ...) gibt es für Zugriffsprüfung und Schlüssellisten. Lesen/Schreiben der Werte erfolgt über den Index-Operator `[schlüssel]`.
 
 ## Lesen & Schreiben
 

@@ -1,5 +1,9 @@
 # Kryptografie & Bereinigung
 
+## Was ist das?
+
+Kryptografie (Cryptography) bezeichnet mathematische Verfahren, um Daten gegen Manipulation oder Mitlesen abzusichern. Hashing (Digest, Fingerprint) erzeugt aus beliebigen Eingaben einen kurzen, einseitigen Pruefwert. Sicherer Zufall (Cryptographically Secure RNG) liefert nicht vorhersagbare Werte fuer Tokens und Schluessel. Encoding wie Base64 macht binaere Daten textsicher transportierbar. Bereinigung (Sanitizing, Escaping) entschaerft gefaehrliche Zeichen aus Nutzereingaben, bevor sie in HTML oder SQL landen.
+
 Builtins fuer Hashing, sicheren Zufall, Base64-Kodierung und Input-Bereinigung.
 
 ## `sha256` / `sh`

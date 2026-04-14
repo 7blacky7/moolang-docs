@@ -1,5 +1,9 @@
 # JSON
 
+## Was ist das?
+
+JSON (JavaScript Object Notation) ist ein textbasiertes Austauschformat fuer strukturierte Daten — Schluessel-Wert-Paare (Object / Map / Dictionary), Listen (Array) und Primitive. Praktisch jede Web-API spricht JSON. In moo werden JSON-Objekte beim Lesen direkt in Dicts und Listen umgewandelt; beim Schreiben passiert das Gleiche umgekehrt.
+
 Builtins fuer JSON-Serialisierung und -Deserialisierung. Aliase sind in `compiler/src/codegen.rs` hinterlegt; jede Variante ruft denselben Runtime-Entrypoint auf.
 
 ## `json_lesen` / `json_parse` / `jp`

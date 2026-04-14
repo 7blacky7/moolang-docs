@@ -1,5 +1,9 @@
 # Regex
 
+## Was ist das?
+
+Ein regulaerer Ausdruck (Regular Expression, Regex, RegExp, Pattern) ist eine kompakte Mini-Sprache, um Muster in Text zu beschreiben — etwa "alle Ziffernfolgen", "alles zwischen Klammern" oder "E-Mail-aehnliche Strings". Damit laesst sich Text durchsuchen, validieren, splitten oder ersetzen. moo nutzt die POSIX-Regex-Syntax (Extended); ein Muster wird einmal kompiliert und kann dann beliebig oft auf verschiedene Texte angewendet werden.
+
 POSIX-Regex-Builtins. Muster werden zuerst via `regex(...)` kompiliert und dann gegen Texte angewandt.
 
 ## `regex` / `muster`

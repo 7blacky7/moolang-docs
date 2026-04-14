@@ -1,9 +1,21 @@
 # Profiler
 
-Der moo-Compiler kann Funktionsaufrufe automatisch instrumentieren und nach
-Programmende einen Report mit Call-Counts und kumulierter Zeit pro Funktion
-ausgeben. Es gibt **keine Profile-Builtins auf Sprachebene** — die Instrumentierung
-wird vom Compiler eingefügt.
+## Was ist das?
+
+Ein Profiler (Performance-Profiler, Function Profiler) misst, wo dein Programm
+wirklich Zeit verbringt — welche Funktionen wie oft aufgerufen werden und wie
+lange sie kumuliert laufen. Das ist die Grundlage jeder Optimierung, weil
+Vermutungen ("das ist sicher langsam") fast immer daneben liegen. Das Modell
+entspricht `cProfile` in Python, `-pg`/`gprof` in C oder eingebauten Profilern
+in JVM/V8: der moo-Compiler fügt bei einem speziellen Build-Flag automatisch
+**Enter**- und **Exit**-Haken in jede Nutzer-Funktion ein (Instrumentierung zur
+Kompilierzeit) und druckt am Programm-Ende einen Report. Du schreibst dafür
+keinen eigenen Code — einfach mit Flag neu kompilieren und laufen lassen.
+
+---
+
+Es gibt **keine Profile-Builtins auf Sprachebene** — die Instrumentierung wird
+vom Compiler eingefügt.
 
 ## Aktivierung
 

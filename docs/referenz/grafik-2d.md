@@ -1,6 +1,18 @@
 # Grafik 2D
 
-2D-Fenster, Zeichen-Primitive, Tastatur- und Maus-Eingabe. Runtime: SDL2.
+## Was ist das?
+
+2D-Grafik ist die klassische pixelbasierte Darstellung auf einer flachen Fläche
+(Window, Canvas, Surface) — wie Tetris, Paint oder eine HUD-Anzeige. moo öffnet
+ein Betriebssystem-Fenster, liefert dir einen "Pinsel" für einfache Formen
+(Rechtecke, Kreise, Linien, einzelne Pixel) und eine Haupt-Schleife, die auf
+Tastatur- und Maus-Eingaben reagiert. Das Modell entspricht SDL2 / pygame / HTML5
+Canvas: du zeichnest pro Frame alles neu, synchronisierst mit einem Frame-Swap
+und begrenzt die Bildrate über eine kurze Pause. Koordinaten laufen in Pixeln
+ab links-oben `(0, 0)`, Farben sind Hex-Strings (`"#RRGGBB"`).
+
+---
+
 Ground-Truth: `compiler/src/runtime_bindings.rs`, Aliase: `compiler/src/codegen.rs`.
 
 ## Fenster

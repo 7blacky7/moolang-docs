@@ -1,5 +1,9 @@
 # Threads
 
+## Was ist das?
+
+Threads (Worker, Goroutine, Coroutine, Background-Task) erlauben es, Code parallel zur Hauptlogik laufen zu lassen — zum Beispiel um waehrend einer langen Berechnung weiter auf Eingaben zu reagieren oder mehrere unabhaengige Aufgaben gleichzeitig abzuarbeiten. moo nutzt darunter echte OS-Threads (POSIX pthreads). Jeder Thread bekommt eine Funktion und ein Argument; das Ergebnis kann am Handle abgeholt werden.
+
 Builtins fuer Hintergrund-Ausfuehrung. Threads werden mit `starte(callable, arg)` gestartet und liefern ein Thread-Handle, dessen Methoden `warten()` und `fertig()` verfuegbar sind.
 
 ## `starte` / `spawn`

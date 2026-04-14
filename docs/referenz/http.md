@@ -1,5 +1,9 @@
 # HTTP
 
+## Was ist das?
+
+HTTP (HyperText Transfer Protocol) ist das Standard-Protokoll, mit dem Programme Daten von Webservern abrufen oder an sie schicken (Request / Response). moo bringt einen einfachen synchronen HTTP-Client mit: ein Aufruf blockiert, bis die Gegenseite geantwortet hat, und liefert den Antwort-Body als Text zurueck. Damit lassen sich REST-APIs, Wetterdienste oder eigene Backends ohne Zusatzbibliothek ansprechen.
+
 HTTP-Client-Builtins fuer GET- und POST-Anfragen. Aufrufe blockieren bis zur Antwort.
 
 ## `http_hole` / `http_get` / `hg`

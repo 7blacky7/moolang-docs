@@ -1,6 +1,10 @@
 # Text-Methoden (Strings)
 
-Methoden werden über die Punkt-Notation auf einem Text-Wert aufgerufen.
+## Was ist das?
+
+Ein **Text** (in anderen Sprachen: *String*, *Zeichenkette*) ist eine Folge von Unicode-Zeichen. In moolang wird er mit doppelten Anführungszeichen geschrieben: `"Hallo"`. Texte sind **unveränderlich** (immutable) — Operationen wie `.ersetzen(…)` oder `.gross()` geben einen neuen Text zurück statt den ursprünglichen zu verändern.
+
+Methoden werden über die Punkt-Notation aufgerufen: `"abc".gross()`. Verkettung geschieht mit `+`. Länge und Enthalten-Prüfung gibt es als Methode und als Builtin.
 
 ## Groß- & Kleinschreibung
 

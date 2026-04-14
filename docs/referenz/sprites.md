@@ -1,7 +1,18 @@
 # Sprites
 
-BMP/PNG-Bilder laden und im 2D-Fenster zeichnen (auch skaliert / als Ausschnitt).
-Setzt ein offenes Fenster voraus (`fenster_erstelle`).
+## Was ist das?
+
+Ein Sprite (Image, Texture, Bitmap) ist eine geladene Bilddatei, die du im
+2D-Fenster frei positionieren, skalieren oder in Teilbereichen (Tile-Atlas,
+Spritesheet) zeichnen kannst. Das ist die Grundlage für Charakter-Animation,
+Tile-Based-Level, Icons, HUD-Elemente und Partikel — also alles, was nicht als
+primitive Form (Rechteck, Kreis) gezeichnet wird. moo lädt BMP und PNG, hält
+das Bild in einer GPU-freundlichen Struktur und lässt dich Teil-Rechtecke aus
+einem grossen Atlas auf beliebige Ziel-Rechtecke im Fenster zeichnen.
+
+---
+
+Setzt ein offenes 2D-Fenster voraus.
 
 ## `sprite_laden` / `sprite_load`
 
