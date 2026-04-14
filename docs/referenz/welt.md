@@ -76,6 +76,27 @@ importiere welt
 **Zweck**: Baum-Dichte pro Biom setzen (`chance` 0.0–1.0). Wrapper um die
 Runtime-Builtin `__welt_baeume` / `__world_trees`.
 
+## Beleuchtung (Backend-intern)
+
+Die Welt-Engine delegiert die eigentliche Szenenbeleuchtung an das aktive
+3D-Backend (`moo_3d_backend.h`: `set_light_dir`, `set_ambient`, `set_fog_density`).
+Du steuerst sie **nicht** direkt über einzelne `welt_ambient`- oder
+`welt_licht_*`-Funktionen, sondern indirekt über:
+
+- `welt_sonne(w, x, y, z)` — Basisrichtung der Sonne (Vektor, darauf setzt die
+  Engine auf).
+- `welt_tageszeit(w, zeit)` — treibt pro Frame automatisch die Backend-Hooks
+  `set_light_dir` (Sonnenrichtung aus Tageszeit-Winkel) und `set_ambient`
+  (Umgebungslicht-Level `0.02–0.20` abhängig vom Tages-Faktor). So werden
+  Nacht/Morgen/Mittag/Abend ohne zusätzlichen User-Code korrekt beleuchtet.
+- `welt_nebel(w, distanz)` — ruft backend-intern `set_fog_density`.
+
+Die Sonne wird zusätzlich als sichtbare Kugel gerendert und ihre Farbe aus
+der Tageszeit abgeleitet (`#FFFFCC` Mittag, `#FF8C00` Morgen, `#FF4500` Abend,
+`#FF6B35` Dämmerung). Wenn du rohe Kontrolle über `set_light_dir` oder
+`set_ambient` brauchst, arbeite nicht mit der Welt-Engine, sondern direkt mit
+dem 3D-Modul (`raum_*`).
+
 ## Abfragen
 
 ### `welt_hoehe_bei` / `world_height_at`
