@@ -61,6 +61,31 @@ aus dem Dict `vars`.
 
 - `req.antworten(body, status)` / `req.respond(body, status)`
 - `req.json_antworten(daten)` / `req.json_respond(daten)`
+- `req.antworten_mit_headers(body, status, headers)` / `req.respond_with_headers(...)`
+- `req.json_antworten_mit_headers(daten, status, headers)` / `req.json_respond_with_headers(...)`
+
+## Request-Headers lesen
+
+`req["headers"]` ist ein Dict mit allen eingehenden HTTP-Headern; die Schluessel sind klein geschrieben (`"cookie"`, `"user-agent"`, `"authorization"`). Damit lassen sich Cookies auslesen, Token pruefen oder Content-Types unterscheiden.
+
+```moo
+setze cookie auf req["headers"]["cookie"]
+setze auth   auf req["headers"]["authorization"]
+```
+
+## Antworten mit eigenen Headers
+
+`req.antworten_mit_headers(body, status, headers)` sendet eine HTTP-Antwort und nimmt ein Headers-Dict entgegen. Damit lassen sich `Set-Cookie`, `Cache-Control`, CORS-Header oder ein eigener `Content-Type` setzen. `Content-Length` und `Connection` werden weiterhin automatisch gesetzt; setzt der Aufrufer einen eigenen `Content-Type`, ersetzt dieser den Default.
+
+```moo
+setze headers auf {
+    "Set-Cookie": "session=abc123; Path=/; HttpOnly",
+    "Cache-Control": "no-store"
+}
+req.antworten_mit_headers("<h1>Eingeloggt</h1>", 200, headers)
+```
+
+`req.json_antworten_mit_headers(daten, status, headers)` funktioniert analog fuer JSON-Antworten.
 
 ## Vollständiges Beispiel (aus `beispiele/http_api.moo`)
 
