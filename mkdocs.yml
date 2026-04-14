@@ -108,6 +108,7 @@ nav:
       - 2D-Grafik: referenz/grafik-2d.md
       - Sprites: referenz/sprites.md
       - 3D-Grafik: referenz/grafik-3d.md
+      - Hybrid 2D + 3D: referenz/grafik-hybrid.md
       - Welt-Engine: referenz/welt.md
   - Runtime-APIs (Kurzuebersicht):
       - 2D-Grafik & Sprites: runtime/grafik.md
