@@ -58,9 +58,7 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
+      custom_checkbox: true
 
 plugins:
   - search:
