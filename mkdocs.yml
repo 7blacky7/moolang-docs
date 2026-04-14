@@ -103,6 +103,7 @@ nav:
       - Webserver: referenz/webserver.md
       - Profiler: referenz/profiler.md
       - Test-API: referenz/test-api.md
+      - Bare-Metal & System: referenz/bare-metal.md
   - 3D & Game-Dev Modul:
       - 2D-Grafik: referenz/grafik-2d.md
       - Sprites: referenz/sprites.md
