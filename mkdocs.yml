@@ -77,8 +77,17 @@ copyright: Open Source — Lizenz wird vor v1.0 festgelegt
 nav:
   - Start: index.md
   - Installation: installation.md
+  - Features: features.md
   - Tutorial: tutorial.md
   - Sprache:
       - sprache/grundlagen.md
+  - Runtime-APIs:
+      - 2D-Grafik & Sprites: runtime/grafik.md
+      - 3D-Grafik: runtime/3d.md
+      - JSON: runtime/json.md
+      - HTTP & Netzwerk: runtime/http.md
+      - Datenbank: runtime/datenbank.md
+      - Kryptografie: runtime/krypto.md
+      - Threads & Channels: runtime/threads.md
   - Beispiele: beispiele.md
   - Editor (VS Code): editor.md

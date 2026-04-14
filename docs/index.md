@@ -3,7 +3,7 @@
 !!! warning "Alpha-Version"
     Name und Dateiendung sind **noch nicht final**. `moolang` ist ein Platzhalter — die finale Bezeichnung wird vor v1.0 festgelegt.
 
-**moolang** ist eine Programmiersprache auf **Deutsch** (mit Englisch-Aliases), die direkt zu **nativen Binaries** kompiliert wird — via LLVM.
+**moolang** ist eine Programmiersprache auf **Deutsch** (mit Englisch-Aliases), die direkt zu **nativen Binaries** kompiliert wird — via LLVM 18. Mit breiter eingebauter Runtime: 2D/3D-Grafik, HTTP, WebSockets, SQLite, Kryptografie, Threads, Regex, JSON — alles ohne externe Pakete.
 
 ## Ein Programm
 
@@ -25,46 +25,67 @@ wget https://github.com/7blacky7/moolang-release/releases/latest/download/moolan
 tar -xzf moolang-0.1.0-alpha-linux-x64.tar.gz
 cd moolang-0.1.0-alpha-linux-x64
 ./install.sh
-./moo run beispiele/welten.moo
+./moo repl
 ```
 
-## Was drin ist
+## Was du damit bauen kannst
 
 <div class="grid cards" markdown>
 
--   :material-cube-outline: **2D & 3D Grafik**
+-   :material-server-network: **Web-Backends**
 
-    SDL2 für Sprites, OpenGL 3.3 für 3D — eingebaut in der Runtime.
+    HTTP-Server, WebSocket-Server, JSON-APIs, Datenbank-Anbindung — alles eingebaut. Siehe `beispiele/blog_engine.moo`, `chat/`, `http_api.moo`.
 
--   :material-earth: **Prozedurale Welten**
+-   :material-database: **Daten-Tools**
 
-    Perlin-Noise, Biome, First-Person-Kamera, Tag-Nacht-Zyklus.
+    SQLite direkt. Mini-SQL-Engine, Mini-DB, CSV/JSON-Parser in moolang selbst geschrieben (`mini_sql.moo`, `mini_db.moo`).
 
--   :material-network: **Netzwerk**
+-   :material-gamepad-variant: **2D-Spiele**
 
-    HTTP-Client, WebSocket-Server, TCP-Sockets, MQTT.
+    Sprites, Tilesets, Input, Kollision — SDL2 eingebaut. Pong, Snake, Tetris, Zelda, Platformer bereits als Beispiele.
 
--   :material-database: **Persistenz**
+-   :material-cube-outline: **3D-Welten**
 
-    SQLite, JSON, Dateien, Kryptografie — alles ohne externe Crates.
+    OpenGL 3.3, Kamera, Meshes, Licht, Tag-Nacht-Zyklus. Inkl. Welt-Engine mit Perlin-Noise + Biomen (`welten.moo`).
 
--   :material-translate: **Zweisprachig**
+-   :material-security: **Krypto & Sicherheit**
 
-    Schreib `setze x auf 5` oder `set x to 5` — beides funktioniert.
+    SHA-256/512, HMAC, Base64, sichere Zufallszahlen, HTML/SQL-Sanitizing.
 
--   :material-rocket-launch: **Native Binaries**
+-   :material-parser: **Compiler & Parser**
 
-    Per LLVM kompiliert, keine VM, keine Runtime-Dependencies zur Compile-Zeit.
+    Eigene Mini-Sprachen bauen: Mini-Lisp, BF-Interpreter, Regex-Engine, StackVM, SAT-Solver als Beispiele.
+
+-   :material-brain: **KI & Numerik**
+
+    Neural Net, A*, Raytracer, Partikel-Simulation — alles in moolang. Siehe `neuralnet.moo`, `raytracer/`, `astar.moo`.
+
+-   :material-content-save-cog: **System-Tools**
+
+    ELF-Reader, Tar-Parser, X86-Disassembler, GIF/PNG-Encoder, DNS-Resolver — Zugriff bis auf Bit-Ebene.
+
+-   :material-cpu-64-bit: **Bare-Metal & WASM**
+
+    `--no-stdlib` für Kernel-Entwicklung, `--target wasm32` für Browser. Kein libc-Zwang.
 
 </div>
 
+## Warum moolang?
+
+- **Low Ceremony** — kein `public static void main`, kein Cargo.toml, kein Webpack. Du schreibst `zeige "Hallo"` und tippst `moo run`.
+- **Batteries included** — HTTP, DB, Crypto, Threads, 2D/3D sind Teil der Runtime, keine 500 Dependencies.
+- **Nativ kompiliert** — LLVM macht Binaries. Keine VM, kein JIT, kein GC-Pause-Problem.
+- **Zweisprachig** — Deutsch für Anfänger, Englisch für den Rest. Mischbar in einer Datei.
+
 ## Wohin als Nächstes?
 
-- [Installation](installation.md) — Download + erste Schritte
-- [Tutorial](tutorial.md) — Von `zeige "Hallo"` bis 3D-Welt
-- [Sprache](sprache/grundlagen.md) — Referenz aller Konstrukte
+- [Installation](installation.md) — Download und erste Schritte
+- [Features](features.md) — vollständige Feature-Übersicht
+- [Tutorial](tutorial.md) — Schritt für Schritt von Variable bis 3D-Welt (993 Zeilen)
+- [Sprache](sprache/grundlagen.md) — Syntax-Referenz
+- [Runtime-APIs](runtime/grafik.md) — Grafik, Netz, DB, Krypto, Threads
 - [Beispiele](beispiele.md) — 126+ Programme zum Durchstöbern
-- [VS Code](editor.md) — Syntax-Highlighting + LSP einrichten
+- [VS Code](editor.md) — Editor-Integration
 
 ## Status
 
