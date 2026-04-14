@@ -55,6 +55,20 @@ Bytes-Liste für binäre Daten.
 
 **Signatur**: `string_zu_bytes(text) → bytes` · `bytes_zu_liste(bytes) → text`
 
+### `bytes_neu` / `bytes_new`
+
+**Signatur**: `bytes_neu(liste<zahl>) → bytes`
+**Zweck**: Erzeugt einen binary-safe String (Byte-Puffer) aus einer Liste von
+Byte-Werten (0–255). Nuetzlich zum Zusammenbauen von Netzwerk-Frames,
+Protokoll-Headern oder File-Signaturen byteweise, bevor sie an `.schreiben()`
+oder `datei_schreiben_bytes(...)` gehen.
+
+**Beispiel**:
+```moo
+setze magic auf bytes_neu([0x89, 0x50, 0x4E, 0x47])  # PNG-Magic
+datei_schreiben_bytes("header.bin", magic)
+```
+
 ## Beispiel — TCP-Reverse-Proxy (aus `beispiele/proxy.moo`)
 
 ```moo
