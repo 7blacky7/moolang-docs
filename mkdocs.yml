@@ -110,6 +110,7 @@ nav:
       - Netze & Training: referenz/ki-netze.md
       - Tokenizer & Chat: referenz/ki-tokenizer.md
       - GPU-Training: referenz/ki-gpu.md
+      - Audio (FFT & Spektrogramm): referenz/ki-audio.md
   - 3D & Game-Dev Modul:
       - 2D-Grafik: referenz/grafik-2d.md
       - Sprites: referenz/sprites.md
