@@ -5,7 +5,7 @@
 3D-Grafik beschreibt eine Szene in echten Welt-Koordinaten (X, Y, Z) und
 projiziert sie mit einer Kamera auf dein Fenster — so wie Minecraft, Quake oder
 jeder Level-Editor arbeiten. moo bringt einen simplen **Immediate-Mode-Renderer**
-(OpenGL 3.3): du öffnest ein 3D-Fenster, setzt eine Perspektive und eine
+mit drei Backends (OpenGL 3.3, OpenGL 2.1 für alte Hardware, Vulkan): du öffnest ein 3D-Fenster, setzt eine Perspektive und eine
 Kamera, stapelst Transformationen (Translate, Rotate) über einen Matrix-Stack
 (wie OpenGL 1.x oder Processing), und zeichnest Primitive (Würfel, Kugel,
 Dreieck). Für Performance kannst du Geometrie einmal als **Chunk** (Display
@@ -81,6 +81,32 @@ Delta-Mausbewegung reicht für First-Person-Kamera.
 ### `raum_maus_dx`, `raum_maus_dy`
 
 **Signatur**: `raum_maus_dx(win) → zahl` · `raum_maus_dy(win) → zahl`
+**Zweck**: Relative Mausbewegung seit dem letzten Lesen (Raw-Mouse-Motion, consume-on-read).
+
+### `raum_maus_freigeben`, `raum_maus_x/y/taste/rad`
+
+**Signatur**: `raum_maus_freigeben(win)` · `raum_maus_x(win)` · `raum_maus_y(win)` · `raum_maus_taste(win, knopf)` · `raum_maus_rad(win)`
+**Zweck**: Capture beenden bzw. absolute Position, Knopfstatus und Scrollrad abfragen.
+
+## Licht, Material & Atmosphäre
+
+| Builtin | Signatur | Zweck |
+|---|---|---|
+| `raum_licht` | `(win, an?)` | Beleuchtung ein/aus |
+| `raum_umgebungslicht` | `(win, stärke)` | Ambient-Anteil |
+| `raum_lichtfarbe` | `(win, r, g, b)` | Farbe der Lichtquelle |
+| `raum_glanz` | `(win, stärke)` | Specular-Highlights (Glänzen) |
+| `raum_tageszeit` | `(win, zeit)` | Tag-Nacht-Zyklus: Sonne/Farbstimmung animiert |
+| `raum_nebel` | `(win, nah, fern)` | Distanz-Fog |
+| `raum_nebel_farbe` | `(win, r, g, b)` | Fog-Farbe |
+| `raum_löschen_farbe` / `raum_loeschen_farbe` | `(win, r, g, b)` | Clear-Farbe setzen (statt pro Frame in `raum_löschen`) |
+| `raum_transparenz` | `(win, alpha)` | Alpha-Transparenz für folgende Primitive |
+| `raum_wellen` | `(win, an?)` | Zeitanimierte Wasserwellen per Vertex-Displacement |
+| `raum_dreieck_farben` | `(win, …koordinaten, f1, f2, f3)` | Gouraud-Dreieck mit per-Vertex-Farben |
+
+## Test-Simulation & Screenshots
+
+Für deterministische 3D-Tests (siehe [Test-API](test-api.md)): `raum_sim_taste(win, taste, zustand)` (Tri-State-Tastatur-Simulation), `raum_sim_maus_pos`, `raum_sim_maus_taste`, `raum_sim_maus_delta` (consume-on-read-Delta), `raum_sim_rad`, `raum_sim_reset` — sowie `raum_screenshot(win, pfad)` / `raum_screenshot_bmp` für Framebuffer-Aufnahmen.
 
 ## Chunk Display Lists
 

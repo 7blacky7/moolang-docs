@@ -39,6 +39,17 @@ taste_simulieren("hoch", falsch)
 **Signatur**: `maus_simulieren(x, y, knopf)`
 **Zweck**: Setzt Mausposition und Knopfstatus (`0`=keiner, `1`=links, …).
 
+## Frames, GIF & Video aufnehmen
+
+Für visuelle Regressions-Tests und Demos gibt es einen Frame-Grab-Layer:
+
+| Builtin | Zweck |
+|---|---|
+| `test_frame_grab(win)` | Aktuellen Frame als Frame-Objekt greifen |
+| `test_pixel(frame, x, y)` | Einzelnen Pixel eines Frames prüfen |
+| `test_gif_start(win, pfad)` · `test_gif_frame(win)` · `test_gif_ende(win)` | Animiertes GIF direkt aus dem Fenster aufnehmen |
+| `test_video_start` / `test_video_aufnahme_start` · `test_video_frame` / `test_video_bild` · `test_video_ende` / `test_video_end` | MP4-Video-Aufnahme |
+
 ## Vollständiges Beispiel (aus `beispiele/test_pong.moo`)
 
 ```moo

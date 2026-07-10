@@ -25,6 +25,10 @@ Der native Compiler kennt drei bare-metal-relevante Flags:
 | `--no-stdlib` | linkt `moo_bare.c` statt der vollen Runtime (kein malloc, kein printf) |
 | `--linker_script <pfad>` | gibt ein eigenes Linker-Script an (fuer Flash-/RAM-Layout) |
 | `--entry <symbol>` | setzt einen alternativen Entry-Point statt `main` (z.B. `_start` oder `reset_handler`) |
+| `--target x86_64-bare` (u.a.) | Bare-Metal-Cross-Target; schaltet die `kern_*`-Builtins frei (require_bare) |
+| `--kernel` | Kernel-Pipeline: baut ein bootfähiges Image (x86_64 Multiboot2 + Long Mode, ARM64 qemu-virt) |
+| `--board <profil>` | Board-Profil für konkrete Hardware (z.B. Raspi4) |
+| `--emit elf\|flat\|sector` | Ausgabeformat: ELF, flaches Binary oder Boot-Sektor |
 
 Beispiel:
 ```bash
@@ -64,6 +68,20 @@ wenn (gpio_in und 0x0001) != 0:
 setze ODR auf speicher_lesen(0x40011010, 4)
 speicher_schreiben(0x40011010, ODR xor 0x2000, 4)
 ```
+
+## Kernel-Baukasten: die `kern_*`-Familie
+
+Mit `--target *-bare` steht ein kompletter Kernel-Grundstock als Builtins bereit (DE/EN-Aliasse in Klammern). Beweis-Gates: `kernel-smoke.sh` (x86_64/QEMU) und `kernel-smoke-arm64.sh`.
+
+**Konsole**: `kern_seriell_init/zeichen/dez/hex` (`kern_serial_init/char/dec/hex`) — serielle Ausgabe; `kern_vga_init/farbe/zeichen` (`kern_vga_color/char`) — VGA-Textmodus.
+
+**Speicher**: `kern_speicher_init` (`kern_mem_init`), `kern_alloc`/`kern_reserviere`, `kern_frei` (`kern_free`), `kern_speicher_frei/belegt/peak` (`kern_mem_free_bytes/used/peak`) — eigener Allocator ohne libc.
+
+**Interrupts & Timer**: `kern_idt_init`, `kern_pic_remap`, `kern_pic_maskiere/demaskiere` (`kern_pic_mask/unmask`), `kern_pic_eoi`, `kern_timer_init`, `kern_ticks` — IDT/PIC/PIT-Setup bis zum tickenden Timer-Interrupt. `kern_stackprot_selbsttest` prüft den Stack-Schutz.
+
+**Port-I/O**: `kern_inw/outw` (16-bit) und `kern_inl/outl` (32-bit) — direkter Portzugriff.
+
+**CPU-Steuerregister**: `kern_rdmsr_lo/hi` + `kern_wrmsr` (`kern_msr_lese_lo/hi`, `kern_msr_schreibe`) für MSRs, `kern_cr_lese/setze` (`kern_cr_read/write`) für CR0–CR4, `kern_lgdt`/`kern_lidt` für Deskriptor-Tabellen.
 
 ## Grenzen der bare-metal Runtime
 
