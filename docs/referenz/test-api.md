@@ -51,6 +51,7 @@ Für visuelle Regressions-Tests und Demos gibt es einen Frame-Grab-Layer:
 | `test_frame_region(frame, x, y, b, h)` / `test_frame_bereich` | Durchschnittsfarbe einer Region → Dict `{rot, gruen, blau, alpha}` — robuster als Einzelpixel-Asserts |
 | `test_frame_save_png(frame, pfad)` / `test_frame_speichern_png` | Frame als PNG speichern (deutlich kleiner als BMP, ideal zum Ansehen) |
 | `test_frame_save_bmp(frame, pfad)` / `test_frame_speichern_bmp` | Frame als BMP speichern |
+| `tensor_aus_frame(frame, modus?)` / `tensor_from_frame` | Frame → KI-Tensor (`[h,b,4]` bzw. `"grau"` → `[h,b,1]`, Werte 0..1) — Brücke in die KI-Welt, siehe [KI-Tensoren](ki-tensoren.md) |
 | `test_gif_start(win_oder_frame, pfad, fps)` · `test_gif_frame(gif, win_oder_frame)` · `test_gif_ende(gif)` | Animiertes GIF aufnehmen — Fenster-Grab funktioniert bei **2D-SDL-, 3D- und Hybrid-Fenstern** (oder direkt mit einem Frame-Objekt). `test_gif_start` schreibt den ersten Frame gleich mit; bei 2D-Fenstern **vor** `fenster_aktualisieren` aufrufen (Backbuffer) |
 | `test_video_start` / `test_video_aufnahme_start` · `test_video_frame` / `test_video_bild` · `test_video_ende` / `test_video_end` | MP4-Video-Aufnahme |
 

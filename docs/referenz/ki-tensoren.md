@@ -9,6 +9,8 @@ Tensoren sind mehrdimensionale Zahlenfelder — die Grundbausteine jeder KI-Bere
 | Builtin (DE / EN) | Signatur | Zweck |
 |---|---|---|
 | `tensor_aus_liste` / `tensor_from_list` | `(liste) → tensor` | Aus (verschachtelter) Liste, z.B. `[[1,2],[3,4]]` |
+| `tensor_aus_frame` / `tensor_from_frame` | `(frame, modus?) → tensor` | Fenster-Frame (aus `test_frame_grab`) → Tensor `[höhe, breite, 4]`, Werte 0..1. Mit `"grau"`: Luminanz `[h, b, 1]` — **so bekommt ein Netz Augen** (Beispiel: `beispiele/ki_pong_auge.moo`) |
+| `frame_aus_tensor` / `frame_from_tensor` | `(tensor) → frame` | Gegenrichtung: Tensor (`[h,b,4]`, `[h,b,3]`, `[h,b,1]` oder `[h,b]`) → Frame, Werte werden auf 0..1 geklemmt. Danach z.B. `test_frame_save_png` |
 | `tensor` | `(form, wert) → tensor` | Konstanter Tensor, z.B. `tensor([2], 5)` |
 | `tensor_einsen` / `tensor_ones` | `(form) → tensor` | Alles 1.0 |
 | `tensor_nullen` / `tensor_zeros` | `(form) → tensor` | Alles 0.0 |
