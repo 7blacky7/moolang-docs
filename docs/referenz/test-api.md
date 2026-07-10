@@ -47,7 +47,7 @@ Für visuelle Regressions-Tests und Demos gibt es einen Frame-Grab-Layer:
 |---|---|
 | `test_frame_grab(win)` | Aktuellen Frame als Frame-Objekt greifen |
 | `test_pixel(frame, x, y)` | Einzelnen Pixel eines Frames prüfen |
-| `test_gif_start(win, pfad)` · `test_gif_frame(win)` · `test_gif_ende(win)` | Animiertes GIF aufnehmen — Fenster-Grab bei **3D-/Hybrid-Fenstern**; 2D-SDL-Fenster werden aktuell nicht direkt gegrabbt |
+| `test_gif_start(win_oder_frame, pfad, fps)` · `test_gif_frame(gif, win_oder_frame)` · `test_gif_ende(gif)` | Animiertes GIF aufnehmen — Fenster-Grab funktioniert bei **2D-SDL-, 3D- und Hybrid-Fenstern** (oder direkt mit einem Frame-Objekt). `test_gif_start` schreibt den ersten Frame gleich mit; bei 2D-Fenstern **vor** `fenster_aktualisieren` aufrufen (Backbuffer) |
 | `test_video_start` / `test_video_aufnahme_start` · `test_video_frame` / `test_video_bild` · `test_video_ende` / `test_video_end` | MP4-Video-Aufnahme |
 
 ## Vollständiges Beispiel (aus `beispiele/test_pong.moo`)
