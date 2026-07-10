@@ -46,7 +46,7 @@ cd moolang-0.1.0-alpha-linux-x64
 
 -   :material-cube-outline: **3D-Welten**
 
-    OpenGL 3.3, Kamera, Meshes, Licht, Tag-Nacht-Zyklus. Inkl. Welt-Engine mit Perlin-Noise + Biomen (`welten.moo`).
+    OpenGL 3.3/2.1 und Vulkan, Kamera, Meshes, Licht/Specular, Tag-Nacht-Zyklus, Wasser-Wellen, Transparenz. Inkl. Welt-Engine mit Perlin-Noise + Biomen (`welten.moo`) und Voxel-Engine.
 
 -   :material-security: **Krypto & Sicherheit**
 
@@ -58,7 +58,7 @@ cd moolang-0.1.0-alpha-linux-x64
 
 -   :material-brain: **KI & Numerik**
 
-    Neural Net, A*, Raytracer, Partikel-Simulation — alles in moolang. Siehe `neuralnet.moo`, `raytracer/`, `astar.moo`.
+    Kompletter LLM-Stack: Tensoren mit Autograd, Transformer-Baukasten (RMSNorm, RoPE, GQA, SwiGLU, KV-Cache, MoE), bf16, BPE-Tokenizer, Checkpoints — Training auf CPU **und GPU (Vulkan)**. Dazu Neural Net, A*, Raytracer. Siehe `beispiele/ki_*`, `neuralnet.moo`.
 
 -   :material-content-save-cog: **System-Tools**
 
@@ -66,7 +66,7 @@ cd moolang-0.1.0-alpha-linux-x64
 
 -   :material-cpu-64-bit: **Bare-Metal & WASM**
 
-    `--no-stdlib` für Kernel-Entwicklung, `--target wasm32` für Browser. Kein libc-Zwang.
+    Eigener OS-Kernel in moolang (x86_64 Multiboot2, ARM64 qemu-virt) via `--target x86_64-bare --kernel`, eigener Bootloader-Pfad (Stage2, UEFI), `--target wasm32` für Browser. Kein libc-Zwang.
 
 </div>
 
@@ -93,10 +93,13 @@ cd moolang-0.1.0-alpha-linux-x64
 |---------|-------|
 | Compiler (Rust + LLVM 18) | Stabil |
 | Runtime (C11) | Stabil |
+| KI/LLM-Runtime (Tensor, Autograd, Transformer) | Vorhanden — deterministische Trainings-Gates |
+| GPU-Compute (Vulkan) | Residentes Training, Telemetrie-verifiziert |
+| Bare-Metal (Kernel x86_64/ARM64, Bootloader) | PoC — QEMU-Boot-Gates grün |
 | Stdlib (`liste`, `mathe`, `welt` …) | Basis vorhanden |
 | Paketmanager | Minimal (git-clone) |
 | LSP (VS Code) | Syntax-Level, kein Typsystem |
 | Linux x64 Release | ✅ |
-| Windows Release | In Arbeit |
+| Windows Release | Runtime portiert (Winsock2), Release in Arbeit |
 | macOS Release | In Arbeit |
 | Finaler Name | ⏳ noch nicht entschieden |
