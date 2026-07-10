@@ -45,7 +45,10 @@ zeige netz.vorhersage(daten).zu_liste()
 
 | Builtin | Signatur | Zweck |
 |---|---|---|
-| `schicht_dicht` | `(ein, aus, aktivierung?, seed?)` | Vollverbundene Schicht |
+| `schicht_dicht` / `layer_dense` | `(ein, aus, aktivierung?, seed?)` | Vollverbundene Schicht |
+| `schicht_faltung` / `layer_conv2d` | `(kanaele_ein, kanaele_aus, kernel, schritt?, polster?, aktivierung?, seed?)` | 2D-Faltung auf NHWC-Bildern; Ausgabe bleibt NHWC |
+| `schicht_pooling` / `layer_pooling` | `(art?, groesse?, schritt?)` | Räumliches `"max"`- oder `"mittel"`-Pooling |
+| `schicht_flach` / `layer_flatten` | `()` | Formt `[batch, h, w, kanaele]` zu `[batch, merkmale]` um |
 | `schicht_dropout` | `(rate)` | Deterministisches Dropout |
 | `schicht_layernorm` | `(dim)` | LayerNorm (gamma/beta) |
 | `schicht_rmsnorm` | `(dim)` | RMSNorm — Standard moderner LLMs |
@@ -76,6 +79,8 @@ solange i < 400:
 | `parameter(schichten)` | Alle trainierbaren Tensoren einsammeln |
 | `vorwaerts(schichten, x)` | Forward durch eine Schicht-Liste |
 | `mse(y, ziel)` / `kreuzentropie(logits, ziel)` | Verlustfunktionen (CE fused auf Logits = Profi-Pfad) |
+| `kontrastiv(a, b, temperatur?)` / `contrastive` | Symmetrischer InfoNCE-Verlust für gepaarte Embeddings |
+| `kosinus(a, b)` / `cosine` | Kosinus-Ähnlichkeit je Zeile |
 | `optimierer_adam` / `optimierer_adamw` / `optimierer_sgd` | `(params, rate)` → Optimizer mit `.schritt()` |
 | `gradienten_kappen(params, max_norm)` | Globales L2-Gradient-Clipping; gibt die Norm zurück |
 
