@@ -104,6 +104,11 @@ nav:
       - Profiler: referenz/profiler.md
       - Test-API: referenz/test-api.md
       - Bare-Metal & System: referenz/bare-metal.md
+  - KI & LLM:
+      - Tensoren & Autograd: referenz/ki-tensoren.md
+      - Netze & Training: referenz/ki-netze.md
+      - Tokenizer & Chat: referenz/ki-tokenizer.md
+      - GPU-Training: referenz/ki-gpu.md
   - 3D & Game-Dev Modul:
       - 2D-Grafik: referenz/grafik-2d.md
       - Sprites: referenz/sprites.md
