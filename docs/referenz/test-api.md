@@ -47,6 +47,10 @@ Für visuelle Regressions-Tests und Demos gibt es einen Frame-Grab-Layer:
 |---|---|
 | `test_frame_grab(win)` | Aktuellen Frame als Frame-Objekt greifen |
 | `test_pixel(frame, x, y)` | Einzelnen Pixel eines Frames prüfen |
+| `test_frame_diff(frame_a, frame_b)` / `test_frame_vergleich` | Zwei gleich große Frames vergleichen → Dict `{maxdiff, geaenderte_pixel, prozent}` — visuelles Regressions-Primitiv |
+| `test_frame_region(frame, x, y, b, h)` / `test_frame_bereich` | Durchschnittsfarbe einer Region → Dict `{rot, gruen, blau, alpha}` — robuster als Einzelpixel-Asserts |
+| `test_frame_save_png(frame, pfad)` / `test_frame_speichern_png` | Frame als PNG speichern (deutlich kleiner als BMP, ideal zum Ansehen) |
+| `test_frame_save_bmp(frame, pfad)` / `test_frame_speichern_bmp` | Frame als BMP speichern |
 | `test_gif_start(win_oder_frame, pfad, fps)` · `test_gif_frame(gif, win_oder_frame)` · `test_gif_ende(gif)` | Animiertes GIF aufnehmen — Fenster-Grab funktioniert bei **2D-SDL-, 3D- und Hybrid-Fenstern** (oder direkt mit einem Frame-Objekt). `test_gif_start` schreibt den ersten Frame gleich mit; bei 2D-Fenstern **vor** `fenster_aktualisieren` aufrufen (Backbuffer) |
 | `test_video_start` / `test_video_aufnahme_start` · `test_video_frame` / `test_video_bild` · `test_video_ende` / `test_video_end` | MP4-Video-Aufnahme |
 
