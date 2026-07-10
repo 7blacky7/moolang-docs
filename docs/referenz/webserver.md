@@ -68,7 +68,7 @@ aus dem Dict `vars`.
 
 `req["headers"]` ist ein Dict mit allen eingehenden HTTP-Headern; die Schluessel sind klein geschrieben (`"cookie"`, `"user-agent"`, `"authorization"`). Damit lassen sich Cookies auslesen, Token pruefen oder Content-Types unterscheiden.
 
-```moo
+```moolang
 setze cookie auf req["headers"]["cookie"]
 setze auth   auf req["headers"]["authorization"]
 ```
@@ -77,7 +77,7 @@ setze auth   auf req["headers"]["authorization"]
 
 `req.antworten_mit_headers(body, status, headers)` sendet eine HTTP-Antwort und nimmt ein Headers-Dict entgegen. Damit lassen sich `Set-Cookie`, `Cache-Control`, CORS-Header oder ein eigener `Content-Type` setzen. `Content-Length` und `Connection` werden weiterhin automatisch gesetzt; setzt der Aufrufer einen eigenen `Content-Type`, ersetzt dieser den Default.
 
-```moo
+```moolang
 setze headers auf {
     "Set-Cookie": "session=abc123; Path=/; HttpOnly",
     "Cache-Control": "no-store"
@@ -89,7 +89,7 @@ req.antworten_mit_headers("<h1>Eingeloggt</h1>", 200, headers)
 
 ## Vollständiges Beispiel (aus `beispiele/http_api.moo`)
 
-```moo
+```moolang
 setze todos auf ["moo lernen", "REST-API bauen"]
 setze server auf web_server(3000)
 zeige "Server läuft auf http://localhost:3000"

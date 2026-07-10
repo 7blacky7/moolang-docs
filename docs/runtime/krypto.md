@@ -2,7 +2,7 @@
 
 ## Hashing
 
-```moo
+```moolang
 setze hash auf sha256("geheimer Text")
 zeige hash                        # Hex-String
 
@@ -13,14 +13,14 @@ setze sha512_hash auf sha512("text")
 
 ## Zufall (kryptografisch sicher)
 
-```moo
+```moolang
 setze token auf sichere_zufall(16)     # 16 Bytes Zufall, hex-kodiert
 # Englisch: secure_random(16)
 ```
 
 ## Base64-Kodierung
 
-```moo
+```moolang
 setze kodiert auf base64_encode("Hallo Welt")
 zeige kodiert                          # "SGFsbG8gV2VsdA=="
 
@@ -32,7 +32,7 @@ zeige original                         # "Hallo Welt"
 
 Verhindern typischer Injection-Angriffe:
 
-```moo
+```moolang
 # HTML-Tags entschaerfen
 setze sicher auf html_bereinigen("<script>alert('hack')</script>")
 zeige sicher    # "&lt;script&gt;alert('hack')&lt;/script&gt;"
@@ -46,13 +46,13 @@ setze sicher auf sql_bereinigen("'; DROP TABLE users; --")
 
 ## HMAC (Message Authentication)
 
-```moo
+```moolang
 setze mac auf hmac_sha256("geheimer_schluessel", "nachricht")
 ```
 
 ## Anwendungsbeispiel: Token generieren
 
-```moo
+```moolang
 funktion session_token():
     setze random auf sichere_zufall(32)
     setze timestamp auf text(zeit_ms())

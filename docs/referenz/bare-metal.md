@@ -49,7 +49,7 @@ wegoptimieren. `groesse` darf `1` (Byte), `2` (Halfword) oder `4` (Word)
 sein; jeder andere Wert gibt `nichts` zurueck.
 
 **Beispiel** — GPIO-Input-Register lesen:
-```moo
+```moolang
 # STM32: GPIOA Input Data Register bei 0x40010808
 setze gpio_in auf speicher_lesen(0x40010808, 4)
 wenn (gpio_in und 0x0001) != 0:
@@ -63,7 +63,7 @@ wenn (gpio_in und 0x0001) != 0:
 `volatile`. Groessen `1`/`2`/`4` wie bei `speicher_lesen`.
 
 **Beispiel** — LED umschalten:
-```moo
+```moolang
 # STM32: GPIOC ODR bei 0x40011010, PC13 ist LED
 setze ODR auf speicher_lesen(0x40011010, 4)
 speicher_schreiben(0x40011010, ODR xor 0x2000, 4)

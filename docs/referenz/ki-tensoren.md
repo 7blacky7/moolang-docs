@@ -15,7 +15,7 @@ Tensoren sind mehrdimensionale Zahlenfelder — die Grundbausteine jeder KI-Bere
 | `tensor_zufall` / `tensor_random` | `(form, seed) → tensor` | Deterministischer Zufall — gleicher Seed, gleiche Werte |
 
 **Beispiel** (aus dem Test-Gate `test_tensor_builtins.moo`):
-```moo
+```moolang
 setze a auf tensor_aus_liste([[1, 2], [3, 4]])
 setze b auf tensor_einsen([2, 2])
 zeige a + b
@@ -59,7 +59,7 @@ Operatoren broadcasten nach NumPy-Regeln (rechts ausgerichtet; Dimensionen kompa
 `tensor.gradient_loeschen()` / `.zero_gradient()` — setzt den Gradienten auf 0
 
 **Beispiel** — Ableitung von `y = sum(x²)` ist `2x`:
-```moo
+```moolang
 setze x auf tensor_aus_liste([1, 2, 3]).mit_gradient()
 setze y auf (x ** 2).summe()
 y.rueckwaerts()

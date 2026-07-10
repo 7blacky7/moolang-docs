@@ -54,7 +54,7 @@ Das fertige Binary liegt unter `compiler/target/release/moo-compiler`.
 
 ## Erstes Programm
 
-```moo
+```moolang
 # hallo.moo
 zeige "Hallo, Welt!"
 ```

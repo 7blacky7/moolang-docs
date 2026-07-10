@@ -22,7 +22,7 @@ moolang-Objekte können Events publizieren und abonnieren (Beobachter-Muster).
 
 ### Beispiel
 
-```moo
+```moolang
 setze spieler auf neues Objekt
 ereignis_bei(spieler, "tod", funktion():
     zeige "Game Over"
@@ -45,7 +45,7 @@ Alternative Punkt-Syntax: `obj.bei("event", cb)` / `obj.auslösen("event")` — 
 **Signatur**: `ist_eingefroren(wert) → Bool`
 **Zweck**: Prüft, ob `wert` eingefroren ist.
 
-```moo
+```moolang
 setze config auf einfrieren({"port": 8080, "host": "0.0.0.0"})
 wenn ist_eingefroren(config):
     zeige "Konfiguration ist schreibgeschützt"

@@ -19,7 +19,7 @@ Setzt ein offenes 2D-Fenster voraus.
 **Signatur**: `sprite_laden(win, pfad) → sprite`
 **Zweck**: Lädt eine Bilddatei und gibt ein Sprite-Handle zurück.
 
-```moo
+```moolang
 setze s auf sprite_laden(win, "beispiele/assets/sprites/zelda_like/gfx/Overworld.png")
 ```
 
@@ -47,7 +47,7 @@ setze s auf sprite_laden(win, "beispiele/assets/sprites/zelda_like/gfx/Overworld
 
 ## Beispiel — Tile-Atlas + Character-Animation (aus `beispiele/zelda.moo`)
 
-```moo
+```moolang
 konstante GFX auf "beispiele/assets/sprites/zelda_like/gfx/"
 
 funktion lade_sprites(win):

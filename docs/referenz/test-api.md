@@ -18,7 +18,7 @@ alten. So werden Pong, Breakout & Co. headless und reproduzierbar validierbar.
 **Signatur**: `screenshot(win, pfad)`
 **Zweck**: Schreibt den aktuellen Framebuffer als BMP-Datei.
 
-```moo
+```moolang
 screenshot(win, "beispiele/test_screenshots/pong_01_start.bmp")
 ```
 
@@ -28,7 +28,7 @@ screenshot(win, "beispiele/test_screenshots/pong_01_start.bmp")
 **Zweck**: Injiziert einen Key-Event in die SDL-Event-Queue.
 `gedrückt = wahr` = key-down, `falsch` = key-up.
 
-```moo
+```moolang
 taste_simulieren("hoch", wahr)
 # ... Frames laufen lassen ...
 taste_simulieren("hoch", falsch)
@@ -56,7 +56,7 @@ Für visuelle Regressions-Tests und Demos gibt es einen Frame-Grab-Layer:
 
 ## Vollständiges Beispiel (aus `beispiele/test_pong.moo`)
 
-```moo
+```moolang
 # Frame 0: Start-Screenshot
 fenster_löschen(win, "#111111")
 zeichne_rechteck(win, 20, p1_y, 12, 80, "#4CAF50")

@@ -9,7 +9,7 @@ Ein Tokenizer macht aus Text Zahlen (und zurück) — der erste Schritt jedes Sp
 **Signatur**: `text_tokenizer(korpus) → dict` (auch: `char_tokenizer`)
 **Zweck**: Baut aus einem Text ein Vokabular echter Zeichen (`"ä"` ist EIN Zeichen) und liefert u.a. `ids` und `vokab`.
 
-```moo
+```moolang
 setze tok auf text_tokenizer("Es war einmal …")
 zeige tok["vokab"]
 ```

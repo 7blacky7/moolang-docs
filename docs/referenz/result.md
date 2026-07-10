@@ -39,7 +39,7 @@ Statt einen Fehler als Exception zu werfen (die unsichtbar durch den Aufrufbaum 
 
 ## Muster
 
-```moo
+```moolang
 funktion hole_datei(pfad):
     wenn nicht datei_existiert(pfad):
         gib_zurück fehler("Datei fehlt: " + pfad)

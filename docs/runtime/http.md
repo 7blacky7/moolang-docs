@@ -4,7 +4,7 @@ Eingebauter HTTP-Client (via libcurl) sowie WebSocket-, TCP- und MQTT-APIs.
 
 ## HTTP-Client
 
-```moo
+```moolang
 setze antwort auf http_hole("https://api.example.com/daten")
 zeige antwort
 
@@ -16,7 +16,7 @@ Englisch: `http_get`, `http_post`.
 
 ## Mit Headers
 
-```moo
+```moolang
 setze antwort auf http_hole("https://api.example.com/daten", {
     "Authorization": "Bearer xyz",
     "Accept": "application/json"
@@ -27,7 +27,7 @@ setze antwort auf http_hole("https://api.example.com/daten", {
 
 Moolang bringt einen vollständigen WebSocket-Server mit:
 
-```moo
+```moolang
 importiere websocket
 
 websocket_server_starten(8080, funktion(nachricht, client_id):
@@ -40,7 +40,7 @@ websocket_server_starten(8080, funktion(nachricht, client_id):
 
 Low-Level-Sockets für Proxys, Chat-Server, eigene Protokolle:
 
-```moo
+```moolang
 setze server auf tcp_lauschen(5555)
 solange wahr:
     setze client auf tcp_akzeptieren(server)

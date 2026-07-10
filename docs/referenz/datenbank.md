@@ -12,7 +12,7 @@ SQLite-basierte DB-Builtins. Die Verbindungszeichenkette startet ueblicherweise 
 **Zweck**: Oeffnet eine Datenbank-Verbindung (legt SQLite-Datei bei Bedarf an).
 
 **Beispiel** (aus `beispiele/adressbuch.moo`):
-```moo
+```moolang
 setze db auf db_verbinde("adressbuch.db")
 db_ausführen(db, "CREATE TABLE IF NOT EXISTS kontakte (id INTEGER PRIMARY KEY, name TEXT, email TEXT, telefon TEXT)")
 ```
@@ -23,7 +23,7 @@ db_ausführen(db, "CREATE TABLE IF NOT EXISTS kontakte (id INTEGER PRIMARY KEY, 
 **Zweck**: Fuehrt ein SQL-Statement ohne Ergebnisrueckgabe aus (DDL, INSERT, UPDATE, DELETE).
 
 **Beispiel** (aus `beispiele/adressbuch.moo`):
-```moo
+```moolang
 db_ausführen(db, "INSERT INTO kontakte (name, email, telefon) VALUES ('" + name + "', '" + email + "', '" + telefon + "')")
 ```
 
@@ -33,7 +33,7 @@ db_ausführen(db, "INSERT INTO kontakte (name, email, telefon) VALUES ('" + name
 **Zweck**: Fuehrt ein SELECT aus und liefert die Ergebniszeilen als Liste.
 
 **Beispiel** (aus `beispiele/adressbuch.moo`):
-```moo
+```moolang
 setze ergebnis auf db_abfrage(db, "SELECT id, name, email, telefon FROM kontakte ORDER BY name")
 für zeile in ergebnis:
     zeige zeile
@@ -53,7 +53,7 @@ Typ-Mapping: Ganzzahlen → `INTEGER`, Kommazahlen → `REAL`, Strings → `TEXT
 gebunden.
 
 **Beispiel** (verifiziert, `/tmp/moo-verify/db_prep_1_basic.moo`):
-```moo
+```moolang
 setze r auf db_abfrage_mit_params(db, "SELECT id, name, age FROM u WHERE age > ?", [26])
 zeige r
 ```
@@ -65,7 +65,7 @@ zeige r
 Gibt die Anzahl betroffener Zeilen zurueck.
 
 **Beispiel**:
-```moo
+```moolang
 setze n auf db_ausführen_mit_params(db,
     "INSERT INTO u (name, age) VALUES (?, ?)", ["Anna", 25])
 zeige n
@@ -99,7 +99,7 @@ ideal fuer Bulk-Inserts, wiederholte Queries oder Named-Params (`:name`,
 
 ### Beispiel — Named-Params
 
-```moo
+```moolang
 setze stmt auf db_vorbereite(db, "INSERT INTO u (name, age) VALUES (:name, :age)")
 stmt.binde(":name", "Anna")
 stmt.binde(":age", 25)
@@ -112,7 +112,7 @@ stmt.schliessen()
 
 ### Beispiel — Bulk-Insert 1000 Zeilen in einer Transaktion
 
-```moo
+```moolang
 db_ausführen(db, "BEGIN")
 setze s auf db_vorbereite(db, "INSERT INTO bulk (id, v) VALUES (?, ?)")
 setze i auf 0
@@ -127,7 +127,7 @@ s.schliessen()
 
 ### Beispiel — Transaktion mit Rollback
 
-```moo
+```moolang
 db_ausführen(db, "BEGIN")
 setze s auf db_vorbereite(db, "INSERT INTO k (name) VALUES (:name)")
 s.binde(":name", "wird_verworfen")
@@ -143,6 +143,6 @@ db_ausführen(db, "ROLLBACK")
 **Zweck**: Schliesst die Verbindung und gibt Ressourcen frei.
 
 **Beispiel** (aus `beispiele/adressbuch.moo`):
-```moo
+```moolang
 db_schliessen(db)
 ```

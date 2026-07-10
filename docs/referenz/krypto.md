@@ -12,7 +12,7 @@ Builtins fuer Hashing, sicheren Zufall, Base64-Kodierung und Input-Bereinigung.
 **Zweck**: Berechnet den SHA-256-Hash des Strings und liefert ihn als Hex-String.
 
 **Beispiel** (aus `beispiele/showcase.moo`):
-```moo
+```moolang
 setze hash auf sha256("moo ist toll")
 zeige f"SHA256: {hash}"
 ```
@@ -23,7 +23,7 @@ zeige f"SHA256: {hash}"
 **Zweck**: SHA-1-Hash als Hex-String (fuer Altsysteme — SHA-256 bevorzugen).
 
 **Beispiel**:
-```moo
+```moolang
 setze hash auf sha1("moo")
 zeige hash
 ```
@@ -34,7 +34,7 @@ zeige hash
 **Zweck**: SHA-1-Hash einer Byte-Liste, zurueckgegeben als 20 Bytes.
 
 **Beispiel**:
-```moo
+```moolang
 setze hash auf sha1_bytes([72, 105])
 ```
 
@@ -44,7 +44,7 @@ setze hash auf sha1_bytes([72, 105])
 **Zweck**: Kryptografisch sichere Zufallsbytes als Hex-String (`laenge` = Anzahl Bytes).
 
 **Beispiel** (aus `docs/lernen.md`):
-```moo
+```moolang
 setze token auf sichere_zufall(16)
 ```
 
@@ -54,7 +54,7 @@ setze token auf sichere_zufall(16)
 **Zweck**: Base64-Kodierung eines Strings.
 
 **Beispiel** (aus `beispiele/showcase.moo`):
-```moo
+```moolang
 setze encoded auf base64_kodieren("Hallo moo!")
 zeige f"Base64: {encoded}"
 ```
@@ -65,7 +65,7 @@ zeige f"Base64: {encoded}"
 **Zweck**: Dekodiert einen Base64-String zurueck zum Original.
 
 **Beispiel** (aus `beispiele/showcase.moo`):
-```moo
+```moolang
 zeige f"Decoded: {base64_dekodieren(encoded)}"
 ```
 
@@ -75,7 +75,7 @@ zeige f"Decoded: {base64_dekodieren(encoded)}"
 **Zweck**: Escaped HTML-Sonderzeichen, um XSS zu verhindern.
 
 **Beispiel** (aus `docs/lernen.md`):
-```moo
+```moolang
 setze sicher auf html_bereinigen("<script>alert('hack')</script>")
 ```
 
@@ -85,6 +85,6 @@ setze sicher auf html_bereinigen("<script>alert('hack')</script>")
 **Zweck**: Escaped SQL-Sonderzeichen (einfache Anfuehrungszeichen etc.), um einfache SQL-Injection zu entschaerfen.
 
 **Beispiel** (aus `docs/lernen.md`):
-```moo
+```moolang
 setze sicher auf sql_bereinigen("'; DROP TABLE users; --")
 ```

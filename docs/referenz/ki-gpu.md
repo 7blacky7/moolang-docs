@@ -12,7 +12,7 @@ Resident laufen u.a.: MatMul (tiled), alle Elementwise-Ops, Achsen-Reduktionen, 
 **Zweck**: Telemetrie der GPU-Schicht — Submits, Uploads, Downloads, CPU-Fallbacks. Damit lässt sich *beweisen*, dass ein Training wirklich resident läuft (`cpu_fallbacks == 0`, im Steady-State keine Uploads).
 
 **Beispiel**:
-```moo
+```moolang
 gpu_statistik_reset()
 netz.trainiere(daten, ziele, {"epochen": 10})
 zeige gpu_statistik()

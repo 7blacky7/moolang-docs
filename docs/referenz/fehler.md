@@ -11,7 +11,7 @@ Grundidee: Mit `wirf <wert>` löst man einen Fehler aus. Mit `versuche: ... fang
 **Signatur**: `wirf <ausdruck>`
 **Zweck**: Löst einen Fehler aus. Der Wert kann beliebig sein (typisch: ein Text oder ein Dict mit Details).
 
-```moo
+```moolang
 funktion dividiere(a, b):
     wenn b == 0:
         wirf "Division durch Null"
@@ -21,7 +21,7 @@ funktion dividiere(a, b):
 ## `versuche` / `fange`
 
 **Syntax**:
-```moo
+```moolang
 versuche:
     <try-block>
 fange <name>:
@@ -30,7 +30,7 @@ fange <name>:
 
 **Zweck**: Führt den `versuche`-Block aus. Bei einem Fehler wird der Fehlerwert in `<name>` gebunden und der `fange`-Block ausgeführt.
 
-```moo
+```moolang
 versuche:
     setze ergebnis auf dividiere(10, 0)
     zeige ergebnis
@@ -42,7 +42,7 @@ fange fehler:
 
 Innerhalb eines `fange`-Blocks ist der gefangene Wert bereits in der Bind-Variable (z.B. `fange fehler:`). Zusätzlich stellt die Laufzeit die Low-Level-Funktion `moo_get_error` bereit, die den letzten geworfenen Wert zurückgibt.
 
-```moo
+```moolang
 versuche:
     wirf {"code": 42, "msg": "Kaputt"}
 fange err:

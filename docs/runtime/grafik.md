@@ -4,7 +4,7 @@
 
 ## Fenster erstellen
 
-```moo
+```moolang
 setze win auf fenster_erstellen("Mein Spiel", 800, 600)
 
 solange fenster_offen(win):
@@ -33,7 +33,7 @@ fenster_schliessen(win)
 
 Bilder laden und zeichnen:
 
-```moo
+```moolang
 setze spieler auf sprite_laden("assets/spieler.png")
 
 solange fenster_offen(win):
@@ -45,7 +45,7 @@ solange fenster_offen(win):
 
 ## Animationen (Spritesheets)
 
-```moo
+```moolang
 setze held auf sprite_laden("assets/held.png")
 
 setze frame auf 0
@@ -59,7 +59,7 @@ solange fenster_offen(win):
 
 ## Input
 
-```moo
+```moolang
 wenn fenster_taste(win, "links"):
     setze spieler_x auf spieler_x - 4
 wenn fenster_taste(win, "rechts"):

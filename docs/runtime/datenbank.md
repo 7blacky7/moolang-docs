@@ -4,7 +4,7 @@ Eingebauter SQLite-Support, dazu Client-Libraries für MySQL, PostgreSQL und Red
 
 ## SQLite
 
-```moo
+```moolang
 setze db auf db_verbinde("sqlite:///meine_daten.db")
 
 db_ausführen(db, "CREATE TABLE IF NOT EXISTS nutzer (id INTEGER PRIMARY KEY, name TEXT)")
@@ -21,7 +21,7 @@ Englisch: `db_connect`, `db_execute`, `db_query`, `db_close`.
 
 ## Prepared Statements
 
-```moo
+```moolang
 db_ausführen(db, "INSERT INTO nutzer (name, alter) VALUES (?, ?)", ["Ben", 30])
 ```
 

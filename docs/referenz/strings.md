@@ -19,7 +19,7 @@ Methoden werden über die Punkt-Notation aufgerufen: `"abc".gross()`. Verkettung
 **Zweck**: Alle Zeichen in Kleinbuchstaben.
 
 Beispiel aus `beispiele/adventure.moo`:
-```moo
+```moolang
 setze t auf eingabe_text.klein()
 ```
 
@@ -36,7 +36,7 @@ setze t auf eingabe_text.klein()
 **Zweck**: Teilt den Text am Trennzeichen in eine Liste.
 
 Beispiel aus `beispiele/adventure.moo`:
-```moo
+```moolang
 setze teile auf t.teilen(" ")
 ```
 
@@ -45,7 +45,7 @@ setze teile auf t.teilen(" ")
 **Signatur**: `text.teilstring(start: Zahl, ende: Zahl) → Text`
 **Zweck**: Gibt den Teilstring von `start` (inklusive) bis `ende` (exklusive) zurück.
 
-```moo
+```moolang
 setze s auf "moolang"
 zeige s.teilstring(0, 3)   # "moo"
 ```
@@ -57,7 +57,7 @@ zeige s.teilstring(0, 3)   # "moo"
 **Signatur**: `text.ersetzen(alt: Text, neu: Text) → Text`
 **Zweck**: Ersetzt alle Vorkommen.
 
-```moo
+```moolang
 zeige "hallo welt".ersetzen("welt", "moo")
 ```
 
@@ -66,7 +66,7 @@ zeige "hallo welt".ersetzen("welt", "moo")
 **Signatur**: `text.enthält(sub: Text) → Bool`
 **Zweck**: Prüft, ob der Text `sub` enthält. (Dispatcher erkennt Typ, siehe auch Listen/Dicts.)
 
-```moo
+```moolang
 wenn eingabe_text.enthält("hilfe"):
     zeige "Hilfe-Menü"
 ```
@@ -78,7 +78,7 @@ wenn eingabe_text.enthält("hilfe"):
 **Signatur**: `länge(text: Text) → Zahl`
 **Zweck**: Anzahl Zeichen. Siehe auch Kern-Referenz.
 
-```moo
+```moolang
 wenn länge(name) > 0:
     zeige name
 ```
@@ -87,6 +87,6 @@ wenn länge(name) > 0:
 
 Texte werden mit dem `+`-Operator verkettet:
 
-```moo
+```moolang
 zeige "Hallo, " + name + "!"
 ```

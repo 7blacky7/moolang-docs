@@ -2,7 +2,7 @@
 
 JSON lesen und schreiben ohne externe Libraries.
 
-```moo
+```moolang
 setze daten auf json_lesen('{"name": "Anna", "alter": 25}')
 zeige daten["name"]                # "Anna"
 
@@ -14,7 +14,7 @@ Englisch: `json_parse`, `json_string`.
 
 ## Listen und Dicts
 
-```moo
+```moolang
 setze obj auf {
     "benutzer": [
         {"name": "Anna", "punkte": 42},
@@ -30,7 +30,7 @@ zeige json_text(obj, indent=2)     # hübsch formatiert
 
 Kombiniert mit den Datei-Builtins:
 
-```moo
+```moolang
 setze inhalt auf datei_lesen("config.json")
 setze config auf json_lesen(inhalt)
 

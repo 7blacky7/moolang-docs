@@ -64,14 +64,14 @@ Protokoll-Headern oder File-Signaturen byteweise, bevor sie an `.schreiben()`
 oder `datei_schreiben_bytes(...)` gehen.
 
 **Beispiel**:
-```moo
+```moolang
 setze magic auf bytes_neu([0x89, 0x50, 0x4E, 0x47])  # PNG-Magic
 datei_schreiben_bytes("header.bin", magic)
 ```
 
 ## Beispiel — TCP-Reverse-Proxy (aus `beispiele/proxy.moo`)
 
-```moo
+```moolang
 setze server auf tcp_server(LISTEN_PORT)
 
 solange wahr:
@@ -90,7 +90,7 @@ solange wahr:
 
 ## Beispiel — UDP-DNS-Client (aus `beispiele/dns_resolver.moo`)
 
-```moo
+```moolang
 setze sock auf udp_socket(0)
 sock.udp_verbinden(selbst.server_host, selbst.server_port)
 sock.schreiben_bytes(query)

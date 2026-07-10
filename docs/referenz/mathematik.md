@@ -13,7 +13,7 @@ Alle Funktionen arbeiten mit dem Typ `Zahl` (entspricht einem IEEE-754 64-Bit Do
 **Signatur**: `abs(x: Zahl) → Zahl`
 **Zweck**: Absolutwert.
 
-```moo
+```moolang
 zeige abs(-5)   # 5
 ```
 
@@ -22,7 +22,7 @@ zeige abs(-5)   # 5
 **Signatur**: `wurzel(x: Zahl) → Zahl`
 **Zweck**: Quadratwurzel.
 
-```moo
+```moolang
 zeige wurzel(16)   # 4
 ```
 
@@ -39,7 +39,7 @@ zeige wurzel(16)   # 4
 **Zweck**: Rundet ab (nächste ganze Zahl ≤ x).
 
 Beispiel aus `beispiele/welten.moo`:
-```moo
+```moolang
 setze gx auf boden(spieler_x)
 setze gz auf boden(spieler_z)
 ```
@@ -62,7 +62,7 @@ setze gz auf boden(spieler_z)
 **Zweck**: Größerer der beiden Werte.
 
 Beispiel aus `beispiele/welten.moo`:
-```moo
+```moolang
 gib_zurück max(vmin, min(vmax, wert))
 ```
 
@@ -89,7 +89,7 @@ gib_zurück max(vmin, min(vmax, wert))
 **Zweck**: Arkustangens von `y/x` unter Berücksichtigung der Quadranten.
 
 Beispiel aus `beispiele/welten.moo`:
-```moo
+```moolang
 setze spieler_x auf spieler_x + sinus(blick_winkel) * BEWEGUNG
 setze spieler_z auf spieler_z + cosinus(blick_winkel) * BEWEGUNG
 ```
@@ -101,7 +101,7 @@ setze spieler_z auf spieler_z + cosinus(blick_winkel) * BEWEGUNG
 **Signatur**: `zufall() → Zahl`
 **Zweck**: Pseudozufallszahl zwischen 0.0 und 1.0.
 
-```moo
+```moolang
 setze r auf zufall()
 wenn r < 0.5:
     zeige "klein"

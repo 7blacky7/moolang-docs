@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moo-pygments"
+version = "0.1.0"
+description = "Pygments-Lexer fuer die moo/moolang-Programmiersprache (Keywords aus spec/tokens.yaml)"
+requires-python = ">=3.9"
+dependencies = ["pygments>=2.14"]
+
+[project.entry-points."pygments.lexers"]
+moo = "moo_lexer:MooLexer"
+
+[tool.setuptools]
+py-modules = ["moo_lexer"]

@@ -7,7 +7,7 @@ moos NN-Stack hat drei Ebenen: die **Kinderleicht-API** (ein Netz in 5 Zeilen), 
 ## Kinderleicht-API
 
 **Beispiel** (verifiziert, `beispiele/ki_kinderleicht.moo` — XOR in 5 Zeilen):
-```moo
+```moolang
 setze daten auf tensor_aus_liste([[0,0],[0,1],[1,0],[1,1]])
 setze ziele auf tensor_aus_liste([[0],[1],[1],[0]])
 setze netz auf ki_netz([schicht_dicht(2, 8, "tanh", 7), schicht_dicht(8, 1, "sigmoid", 8)])
@@ -60,7 +60,7 @@ Dazu auf Netz-Ebene: `moe_balance(netz)` (Balance-Verlust nach dem Forward), `ca
 ## Low-Level: selbst trainieren
 
 **Beispiel** (aus `docs/lernen.md` Stufe 3 — das macht `trainiere` intern):
-```moo
+```moolang
 setze schichten auf [schicht_dicht(2, 8, "tanh"), schicht_dicht(8, 1, "sigmoid")]
 setze opt auf optimierer_adam(parameter(schichten), 0.05)
 setze i auf 0

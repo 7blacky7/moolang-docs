@@ -72,7 +72,7 @@ ein Hex-/Namen-String (`"rot"`, `"#ff0000"`).
 
 ## Beispiel — Mixed Quad + Wuerfel mit Z-Test
 
-```moo
+```moolang
 setze win auf fenster_unified("Hybrid Demo", 800, 600)
 solange hybrid_offen(win):
     hybrid_löschen(win, 0.1, 0.1, 0.15)

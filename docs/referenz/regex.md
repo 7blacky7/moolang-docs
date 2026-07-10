@@ -12,7 +12,7 @@ POSIX-Regex-Builtins. Muster werden zuerst via `regex(...)` kompiliert und dann 
 **Zweck**: Kompiliert einen POSIX-Regex-String zu einem wiederverwendbaren Regex-Objekt.
 
 **Beispiel** (verifiziert, `/tmp/v3_regex.moo`):
-```moo
+```moolang
 setze rx auf regex("[0-9]+")
 ```
 
@@ -22,7 +22,7 @@ setze rx auf regex("[0-9]+")
 **Zweck**: Prueft, ob der Text zum Muster passt.
 
 **Beispiel**:
-```moo
+```moolang
 setze ok auf passt("abc123", rx)
 zeige ok
 ```
@@ -33,7 +33,7 @@ zeige ok
 **Zweck**: Liefert `[start, ende]` des ersten Treffers oder eine leere/negative Markierung, wenn kein Treffer vorliegt.
 
 **Beispiel**:
-```moo
+```moolang
 setze pos auf finde("abc123", rx)
 zeige pos
 ```
@@ -44,7 +44,7 @@ zeige pos
 **Zweck**: Liefert alle Treffer im Text als Liste.
 
 **Beispiel**:
-```moo
+```moolang
 setze alle auf finde_alle("abc123def456", rx)
 zeige alle
 ```
@@ -55,7 +55,7 @@ zeige alle
 **Zweck**: Ersetzt alle Regex-Treffer im Text durch den Ersatz-String.
 
 **Beispiel**:
-```moo
+```moolang
 setze ergebnis auf ersetze("abc123", rx, "X")
 zeige ergebnis
 ```

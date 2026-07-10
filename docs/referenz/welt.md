@@ -18,7 +18,7 @@ einfach zum Reinlaufen.
 
 ## Nutzung
 
-```moo
+```moolang
 importiere welt
 ```
 
@@ -105,7 +105,7 @@ dem 3D-Modul (`raum_*`).
 
 ## Vollständiges Beispiel (aus `beispiele/welt_test.moo`)
 
-```moo
+```moolang
 importiere welt
 
 setze w auf welt_erstelle("moo Welt Test", 1024, 768)

@@ -4,7 +4,7 @@ Echtes Multithreading (pthread-basiert) mit sicheren Channel-primitiven.
 
 ## Threads starten
 
-```moo
+```moolang
 funktion arbeiter(id):
     für i in [0, 1, 2, 3, 4]:
         zeige "Thread " + text(id) + ": " + text(i)
@@ -19,7 +19,7 @@ warte(2000)    # Hauptthread wartet
 
 ## Channels (Go-Stil)
 
-```moo
+```moolang
 setze k auf kanal(16)     # Puffer für 16 Nachrichten
 
 # Producer-Thread
@@ -43,7 +43,7 @@ Englisch: `channel(16)`, `ch.send(...)`, `ch.receive()`.
 
 ## Mutex
 
-```moo
+```moolang
 setze sperre auf mutex()
 setze zaehler auf [0]
 
@@ -55,7 +55,7 @@ funktion inkrementieren():
 
 ## Anwendung: Parallel-Map
 
-```moo
+```moolang
 funktion parallel_map(fn, liste):
     setze kanal_aus auf kanal(länge(liste))
     für item in liste:

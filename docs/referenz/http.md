@@ -11,7 +11,7 @@ HTTP (HyperText Transfer Protocol) ist das Standard-Protokoll, mit dem Programme
 **Zweck**: Fuehrt einen HTTP-GET aus.
 
 **Beispiel** (aus `beispiele/wetter_api.moo`):
-```moo
+```moolang
 setze url auf "https://wttr.in/" + stadt + "?format=3"
 setze antwort auf http_get(url)
 zeige antwort["body"]
@@ -24,7 +24,7 @@ zeige antwort["body"]
 **Zweck**: Fuehrt einen HTTP-POST aus. `daten` wird automatisch als JSON serialisiert, der Content-Type ist `application/json`.
 
 **Beispiel**:
-```moo
+```moolang
 setze ergebnis auf http_post("https://api.example.com/submit", {"name": "Anna"})
 zeige ergebnis["status"]
 ```
@@ -36,7 +36,7 @@ zeige ergebnis["status"]
 **Zweck**: Wie `http_hole`, sendet aber zusaetzliche Request-Header (z.B. `Authorization`, `User-Agent`, `Accept`) und liefert Response-Header zurueck. Nuetzlich fuer APIs mit Token-Authentifizierung oder wenn `Content-Type` / `Location` der Antwort benoetigt wird.
 
 **Beispiel** (verifiziert, `/tmp/moo-verify/http_hdr_2_with_headers.moo`):
-```moo
+```moolang
 setze h auf {"Authorization": "Bearer abc123", "X-App": "moo"}
 setze r auf http_hole_mit_headers("https://api.example.com/me", h)
 zeige r["status"]
@@ -50,7 +50,7 @@ zeige r["headers"]["content-type"]
 **Zweck**: Wie `http_sende`, mit zusaetzlichen Request-Headern. Gibt der Aufruf einen eigenen `Content-Type`-Header mit, ersetzt dieser den Standard `application/json`.
 
 **Beispiel** (verifiziert, `/tmp/moo-verify/http_hdr_3_post_headers.moo`):
-```moo
+```moolang
 setze h auf {"Authorization": "Bearer abc", "X-App": "moo"}
 setze r auf http_sende_mit_headers("https://api.example.com/post", {"k": "v"}, h)
 zeige r["ok"]

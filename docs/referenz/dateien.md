@@ -12,7 +12,7 @@ Builtins fuer Datei- und Verzeichnis-Operationen. Alle Pfade sind relativ zum Ar
 **Zweck**: Liest eine Datei vollstaendig als UTF-8-Text ein.
 
 **Beispiel** (aus `beispiele/datei_suche.moo`):
-```moo
+```moolang
 setze inhalt auf datei_lesen(dateiname)
 setze zeilen auf inhalt.teilen("\n")
 ```
@@ -23,7 +23,7 @@ setze zeilen auf inhalt.teilen("\n")
 **Zweck**: Schreibt `text` in die Datei (legt sie an, ueberschreibt bestehenden Inhalt).
 
 **Beispiel** (aus `beispiele/ascii_editor.moo`):
-```moo
+```moolang
 datei_schreiben("art.txt", inhalt + "\n")
 ```
 
@@ -33,7 +33,7 @@ datei_schreiben("art.txt", inhalt + "\n")
 **Zweck**: Liest eine Datei binaer als Liste von Byte-Werten (0–255).
 
 **Beispiel** (aus `docs/lernen.md`):
-```moo
+```moolang
 setze bytes auf datei_lesen_bytes("bild.png")
 zeige länge(bytes)
 ```
@@ -44,7 +44,7 @@ zeige länge(bytes)
 **Zweck**: Schreibt eine Byte-Liste binaer in die Datei.
 
 **Beispiel**:
-```moo
+```moolang
 datei_schreiben_bytes("out.bin", [72, 105, 10])
 ```
 
@@ -54,7 +54,7 @@ datei_schreiben_bytes("out.bin", [72, 105, 10])
 **Zweck**: Haengt Text an das Ende einer Datei an (legt sie ggf. an).
 
 **Beispiel**:
-```moo
+```moolang
 datei_anhängen("log.txt", "Eintrag\n")
 ```
 
@@ -64,7 +64,7 @@ datei_anhängen("log.txt", "Eintrag\n")
 **Zweck**: Liest eine Datei und gibt sie als Liste von Zeilen zurueck.
 
 **Beispiel**:
-```moo
+```moolang
 für zeile in datei_zeilen("log.txt"):
     zeige zeile
 ```
@@ -75,7 +75,7 @@ für zeile in datei_zeilen("log.txt"):
 **Zweck**: Prueft, ob der Pfad auf eine vorhandene Datei zeigt.
 
 **Beispiel** (aus `beispiele/ascii_editor.moo`):
-```moo
+```moolang
 wenn nicht datei_existiert("art.txt"):
     zeige "noch keine Datei"
 ```
@@ -86,7 +86,7 @@ wenn nicht datei_existiert("art.txt"):
 **Zweck**: Entfernt eine Datei vom Dateisystem.
 
 **Beispiel**:
-```moo
+```moolang
 datei_löschen("temp.txt")
 ```
 
@@ -96,7 +96,7 @@ datei_löschen("temp.txt")
 **Zweck**: Liefert die Eintraege (Dateinamen) eines Verzeichnisses als Liste.
 
 **Beispiel**:
-```moo
+```moolang
 für eintrag in verzeichnis_liste("."):
     zeige eintrag
 ```

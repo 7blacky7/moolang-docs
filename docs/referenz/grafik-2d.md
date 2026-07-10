@@ -22,7 +22,7 @@ Ground-Truth: `compiler/src/runtime_bindings.rs`, Aliase: `compiler/src/codegen.
 **Signatur**: `fenster_erstelle(titel, breite, hoehe) → fenster`
 **Zweck**: Erstellt ein 2D-Fenster und gibt ein Handle zurück.
 
-```moo
+```moolang
 setze win auf fenster_erstelle("moo Pong", 800, 500)
 ```
 
@@ -87,7 +87,7 @@ setze win auf fenster_erstelle("moo Pong", 800, 500)
 
 ## Vollständiges Beispiel (aus `beispiele/pong.moo`)
 
-```moo
+```moolang
 setze win auf fenster_erstelle("moo Pong", 800, 500)
 
 solange fenster_offen(win):

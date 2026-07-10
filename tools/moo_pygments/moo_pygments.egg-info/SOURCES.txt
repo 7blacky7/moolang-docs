@@ -1,0 +1,8 @@
+moo_lexer.py
+pyproject.toml
+moo_pygments.egg-info/PKG-INFO
+moo_pygments.egg-info/SOURCES.txt
+moo_pygments.egg-info/dependency_links.txt
+moo_pygments.egg-info/entry_points.txt
+moo_pygments.egg-info/requires.txt
+moo_pygments.egg-info/top_level.txt

@@ -14,7 +14,7 @@ Gepufferte Channels zur sicheren Kommunikation zwischen Threads.
 **Zweck**: Erzeugt einen Channel mit optionaler Pufferkapazitaet.
 
 **Beispiel** (aus `docs/lernen.md`):
-```moo
+```moolang
 setze k auf kanal(16)
 ```
 
@@ -24,7 +24,7 @@ setze k auf kanal(16)
 **Zweck**: Legt einen Wert in den Channel. Blockiert, wenn der Puffer voll ist.
 
 **Beispiel** (aus `docs/lernen.md`):
-```moo
+```moolang
 k.senden("Hallo vom Thread!")
 ```
 
@@ -34,7 +34,7 @@ k.senden("Hallo vom Thread!")
 **Zweck**: Entnimmt den naechsten Wert. Blockiert, bis ein Wert verfuegbar ist.
 
 **Beispiel** (aus `docs/lernen.md`):
-```moo
+```moolang
 setze nachricht auf k.empfangen()
 zeige nachricht
 ```
@@ -45,7 +45,7 @@ zeige nachricht
 **Zweck**: Schliesst den Channel. Weitere `.senden()`-Aufrufe sind danach nicht mehr zulaessig.
 
 **Beispiel** (verifiziert, `/tmp/v3_chan.moo`):
-```moo
+```moolang
 setze k auf kanal(4)
 k.senden("hallo")
 setze msg auf k.empfangen()

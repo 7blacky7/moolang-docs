@@ -131,7 +131,7 @@ Geometrie einmal bauen, billig wiederholt zeichnen.
 
 ## Beispiel — Rotierende Würfel (aus `beispiele/3d_demo.moo`)
 
-```moo
+```moolang
 setze win auf raum_erstelle("moo 3D Demo", 800, 600)
 raum_perspektive(win, 45.0, 0.1, 100.0)
 
@@ -159,7 +159,7 @@ raum_schliessen(win)
 
 ## Beispiel — Chunk-Mesh (aus `beispiele/welten.moo`)
 
-```moo
+```moolang
 funktion chunk_bauen(win, cx, cz):
     setze chunk auf chunk_erstelle()
     chunk_beginne(chunk)

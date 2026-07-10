@@ -20,7 +20,7 @@ Quelle: `stdlib/mathe.moo`.
 | `klemme(wert, lo, hi)` | `(Zahl, Zahl, Zahl) → Zahl` | Klemmt `wert` in das Intervall `[lo, hi]`. |
 | `lerp(a, b, t)` | `(Zahl, Zahl, Zahl) → Zahl` | Lineare Interpolation. |
 
-```moo
+```moolang
 importiere mathe
 zeige fakultaet(10)
 zeige fibonacci(20)
@@ -42,7 +42,7 @@ Quelle: `stdlib/liste.moo`.
 | `flach_machen(l)` | `(Liste<Liste>) → Liste` | Flacht verschachtelte Liste um eine Ebene ab. |
 | `eindeutig(l)` | `(Liste) → Liste` | Entfernt Duplikate (erhält Reihenfolge). |
 
-```moo
+```moolang
 importiere liste
 zeige summe([1,2,3,4,5])
 zeige maximum([3,7,2,9,1])
@@ -58,7 +58,7 @@ Quelle: `stdlib/text.moo`.
 | `wiederhole(t, n)` | `(Text, Zahl) → Text` | Wiederholt `t` `n`-mal. |
 | `ist_leer(t)` | `(Text) → Bool` | Wahr, wenn `länge(t) == 0`. |
 
-```moo
+```moolang
 importiere text
 zeige wiederhole("ab", 3)   # "ababab"
 zeige ist_leer("")          # wahr

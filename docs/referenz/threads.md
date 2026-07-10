@@ -12,7 +12,7 @@ Builtins fuer Hintergrund-Ausfuehrung. Threads werden mit `starte(callable, arg)
 **Zweck**: Startet `funktion(argument)` in einem neuen Thread und liefert ein Handle.
 
 **Beispiel** (verifiziert, `/tmp/v3_thread.moo`):
-```moo
+```moolang
 setze t auf starte((x) => x * 2, 21)
 zeige t.warten()
 ```
@@ -23,7 +23,7 @@ zeige t.warten()
 **Zweck**: Blockiert bis der Thread fertig ist und liefert sein Ergebnis.
 
 **Beispiel**:
-```moo
+```moolang
 setze ergebnis auf t.warten()
 zeige ergebnis
 ```
@@ -34,7 +34,7 @@ zeige ergebnis
 **Zweck**: Prueft ohne zu blockieren, ob der Thread bereits terminiert ist.
 
 **Beispiel**:
-```moo
+```moolang
 wenn t.fertig():
     zeige "Thread ist fertig"
 ```

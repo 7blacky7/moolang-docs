@@ -16,7 +16,7 @@ Methoden werden über die Punkt-Notation auf einer Liste aufgerufen.
 **Zweck**: Hängt `wert` ans Ende an.
 
 Beispiel aus `beispiele/breakout.moo`:
-```moo
+```moolang
 brick_aktiv.hinzufügen(wahr)
 brick_x.hinzufügen(BRICK_START_X + spalte * (BRICK_W + BRICK_ABSTAND))
 ```
@@ -30,7 +30,7 @@ brick_x.hinzufügen(BRICK_START_X + spalte * (BRICK_W + BRICK_ABSTAND))
 
 Der Elementzugriff erfolgt über Index-Operator `[i]`:
 
-```moo
+```moolang
 setze erster auf snake[0]
 setze snake[0] auf [10, 5]
 ```
@@ -41,7 +41,7 @@ setze snake[0] auf [10, 5]
 **Zweck**: Anzahl der Elemente (siehe Kern).
 
 Beispiel aus `beispiele/adventure.moo`:
-```moo
+```moolang
 solange i < länge(inv):
     zeige inv[i]
     setze i auf i + 1
@@ -66,7 +66,7 @@ solange i < länge(inv):
 **Signatur**: `liste.verbinden(trenner: Text) → Text`
 **Zweck**: Verbindet Text-Elemente zu einem einzigen Text.
 
-```moo
+```moolang
 setze csv auf ["a", "b", "c"].verbinden(",")
 ```
 
@@ -76,7 +76,7 @@ setze csv auf ["a", "b", "c"].verbinden(",")
 **Zweck**: Prüft, ob `wert` in der Liste vorkommt.
 
 Beispiel aus `beispiele/wireframe.moo`:
-```moo
+```moolang
 wenn FONT.enthält(ch):
     zeige ch
 ```

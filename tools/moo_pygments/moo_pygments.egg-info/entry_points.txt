@@ -1,0 +1,2 @@
+[pygments.lexers]
+moo = moo_lexer:MooLexer

@@ -15,7 +15,7 @@ Quelle: `compiler/src/runtime_bindings.rs`, `compiler/src/codegen.rs`.
 **Signatur**: `zeige <ausdruck>`
 **Zweck**: Gibt einen Wert auf der Standardausgabe aus (mit Zeilenumbruch).
 
-```moo
+```moolang
 zeige "Hallo, Welt!"
 zeige 1 + 2
 ```
@@ -26,7 +26,7 @@ zeige 1 + 2
 **Zweck**: Liest eine Zeile von der Standardeingabe, zeigt vorher `prompt`.
 
 Beispiel aus `beispiele/adventure.moo`:
-```moo
+```moolang
 setze eingabe_text auf eingabe("> ")
 ```
 
@@ -37,7 +37,7 @@ setze eingabe_text auf eingabe("> ")
 **Signatur**: `typ_von(wert) → Text`
 **Zweck**: Gibt den Typnamen als Text zurück (`"Zahl"`, `"Text"`, `"Liste"`, `"Dict"`, `"Bool"`, ...).
 
-```moo
+```moolang
 zeige typ_von(42)       # "Zahl"
 zeige typ_von("abc")    # "Text"
 ```
@@ -48,7 +48,7 @@ zeige typ_von("abc")    # "Text"
 **Zweck**: Länge einer Liste, eines Texts oder eines Dicts.
 
 Beispiel aus `beispiele/adventure.moo`:
-```moo
+```moolang
 wenn länge(raum["items"]) > 0:
     zeige raum["items"]
 ```
@@ -60,7 +60,7 @@ wenn länge(raum["items"]) > 0:
 **Signatur**: `text(wert) → Text`
 **Zweck**: Wandelt einen Wert in einen Text um.
 
-```moo
+```moolang
 zeige "Zahl: " + text(42)
 ```
 
@@ -69,7 +69,7 @@ zeige "Zahl: " + text(42)
 **Signatur**: `zahl(text) → Zahl`
 **Zweck**: Parst eine Zahl aus einem Text.
 
-```moo
+```moolang
 setze n auf zahl("42")
 zeige n + 1   # 43
 ```
@@ -86,7 +86,7 @@ zeige n + 1   # 43
 **Signatur**: `zeit_ms() → Zahl`
 **Zweck**: Aktueller Zeitstempel in Millisekunden (für Delta-Time-Berechnungen).
 
-```moo
+```moolang
 setze start auf zeit_ms()
 # ... Arbeit ...
 setze verstrichen auf zeit_ms() - start
@@ -98,7 +98,7 @@ setze verstrichen auf zeit_ms() - start
 **Zweck**: Blockiert für `ms` Millisekunden. Typischer Game-Loop-Takt.
 
 Beispiel aus `beispiele/breakout.moo`:
-```moo
+```moolang
 warte(16)   # ~60 FPS
 ```
 
@@ -107,7 +107,7 @@ warte(16)   # ~60 FPS
 **Signatur**: `schlafe(sekunden: Zahl)`
 **Zweck**: Pausiert den Thread für die angegebene Anzahl Sekunden (feinerer Variant von `warte`, das in ms arbeitet).
 
-```moo
+```moolang
 schlafe(1)
 ```
 
@@ -118,7 +118,7 @@ schlafe(1)
 **Signatur**: `argumente() → Liste<Text>`
 **Zweck**: Kommandozeilenargumente des aktuellen Prozesses.
 
-```moo
+```moolang
 setze args auf argumente()
 zeige args
 ```
@@ -128,7 +128,7 @@ zeige args
 **Signatur**: `umgebung(name: Text) → Text`
 **Zweck**: Liest eine Umgebungsvariable.
 
-```moo
+```moolang
 setze pfad auf umgebung("PATH")
 ```
 
@@ -137,7 +137,7 @@ setze pfad auf umgebung("PATH")
 **Signatur**: `beende(code: Zahl)`
 **Zweck**: Beendet den Prozess mit dem angegebenen Exit-Code.
 
-```moo
+```moolang
 beende(0)
 ```
 
@@ -153,7 +153,7 @@ beende(0)
 **Syntax**: `<start>..<ende>` (Ausdruck, nicht Funktion)
 **Zweck**: Erzeugt einen Bereich von `start` (inklusive) bis `ende` (exklusive) zur Nutzung in `für`-Schleifen.
 
-```moo
+```moolang
 fuer i in 0..10:
     zeige i
 ```

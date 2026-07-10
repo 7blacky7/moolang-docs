@@ -7,7 +7,7 @@
 
 ## Ein Programm
 
-```moo
+```moolang
 zeige "Hallo, Welt!"
 
 funktion fakultät(n):

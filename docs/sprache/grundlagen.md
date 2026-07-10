@@ -4,7 +4,7 @@ moolang ist **zweisprachig** — Deutsch und Englisch funktionieren beide. Diese
 
 ## Variablen
 
-```moo
+```moolang
 setze x auf 5
 setze name auf "Moritz"
 ```
@@ -13,7 +13,7 @@ Englisch: `set x to 5`
 
 Konstanten (unveränderlich):
 
-```moo
+```moolang
 konstante PI auf 3.14159
 ```
 
@@ -32,7 +32,7 @@ Englisch: `const PI to 3.14159`
 
 ## Bedingungen
 
-```moo
+```moolang
 wenn x > 10:
     zeige "groß"
 sonst:
@@ -43,7 +43,7 @@ Englisch: `if x > 10: ... else: ...`
 
 ## Schleifen
 
-```moo
+```moolang
 solange x < 100:
     setze x auf x + 1
 
@@ -55,7 +55,7 @@ Englisch: `while`, `for i in ...`
 
 ## Funktionen
 
-```moo
+```moolang
 funktion quadrat(n):
     gib_zurück n * n
 
@@ -66,21 +66,21 @@ Englisch: `func quadrat(n): return n * n`
 
 Mit Default-Werten:
 
-```moo
+```moolang
 funktion begrüße(name = "Welt"):
     zeige "Hallo " + name
 ```
 
 Lambdas:
 
-```moo
+```moolang
 setze verdoppeln auf lambda(x): x * 2
 zeige verdoppeln(5)   # 10
 ```
 
 ## Listen und Comprehensions
 
-```moo
+```moolang
 setze zahlen auf [1, 2, 3, 4, 5]
 setze quadrate auf [n * n für n in zahlen]
 setze gerade auf [n für n in zahlen wenn n % 2 == 0]
@@ -88,7 +88,7 @@ setze gerade auf [n für n in zahlen wenn n % 2 == 0]
 
 ## Module
 
-```moo
+```moolang
 # mathe.moo
 exportiere funktion sinus(x):
     # ...
@@ -100,14 +100,14 @@ zeige sinus(3.14)
 
 Oder:
 
-```moo
+```moolang
 importiere mathe
 zeige mathe.sinus(3.14)
 ```
 
 ## Klassen
 
-```moo
+```moolang
 klasse Punkt:
     funktion neu(selbst, x, y):
         selbst.x = x

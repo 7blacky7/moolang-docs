@@ -12,7 +12,7 @@ Builtins fuer JSON-Serialisierung und -Deserialisierung. Aliase sind in `compile
 **Zweck**: Parst einen JSON-String zu einem moo-Wert (Dict, Liste, Zahl, String, Boolean, nichts).
 
 **Beispiel** (aus `beispiele/showcase.moo`):
-```moo
+```moolang
 setze json_str auf json_text({"sprache": "moo", "version": 3})
 setze parsed auf json_lesen(json_str)
 zeige f"Parsed: {parsed}"
@@ -24,7 +24,7 @@ zeige f"Parsed: {parsed}"
 **Zweck**: Serialisiert einen moo-Wert (Dict, Liste, Primitiv) zu einem JSON-String.
 
 **Beispiel** (aus `beispiele/showcase.moo`):
-```moo
+```moolang
 setze json_str auf json_text({"sprache": "moo", "version": 3})
 zeige f"JSON: {json_str}"
 ```

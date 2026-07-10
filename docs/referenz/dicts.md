@@ -10,7 +10,7 @@ Methoden (`.hat`, `.schlüssel`, ...) gibt es für Zugriffsprüfung und Schlüss
 
 ## Lesen & Schreiben
 
-```moo
+```moolang
 setze raum auf {"name": "Höhle", "items": []}
 zeige raum["name"]
 setze raum["besucht"] auf wahr
@@ -23,7 +23,7 @@ setze raum["besucht"] auf wahr
 **Signatur**: `dict.hat(schlüssel) → Bool`
 **Zweck**: Prüft, ob ein Schlüssel existiert.
 
-```moo
+```moolang
 wenn raum.hat("items"):
     zeige raum["items"]
 ```
@@ -34,7 +34,7 @@ wenn raum.hat("items"):
 **Zweck**: Liste aller Schlüssel.
 
 Beispiel aus `beispiele/adventure.moo`:
-```moo
+```moolang
 setze keys auf raum.schlüssel()
 solange i < länge(keys):
     zeige keys[i]
@@ -48,6 +48,6 @@ solange i < länge(keys):
 
 ## Länge
 
-```moo
+```moolang
 zeige länge(raum)   # Anzahl Schlüssel
 ```
